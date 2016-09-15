@@ -1,6 +1,122 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+html {
+  box-sizing: border-box;
+}
 
-@import "compass/reset";
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f7f7f7;
+}
+
+a:focus,
+button:focus,
+input:focus {
+  outline: none;
+}
+
+nav {
+  position: relative;
+  ul {
+    margin: 0;
+    padding: 0;
+    background-color: #333333;
+    position: relative;
+    height: 52px;
+    width: 100%;
+    .my_navbar {
+      display: inline-block;
+      width: 15%;
+      margin: 0px 2.2% 0px;
+      a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+        &:hover {
+          background-color: gray;
+          transition: background-color .5s;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+#logo {
+  vertical-align: top;
+  a {
+    font: 300 25px sans-serif;
+    padding: 11.5px;
+  }
+}
+
+#nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  right: 10px;
+  background-color: transparent;
+  height: 100%;
+  display: none;
+}
+
+.rotate {
+  -webkit-transform-origin: 50% 50% 0 !important;
+  -webkit-transform: translateY(-50%) rotate(90deg) !important;
+  -webkit-transition: transform .5s;
+}
+
+.reverse-rotate {
+  transform: rotate(-90deg);
+  transition: transform .5s;
+}
+
+.lines,
+.line:hover {
+  border-bottom: 4px solid white;
+  content: "";
+  height: 1px;
+  width: 25px;
+  margin: 4px;
+  pointer: hand;
+  display: block;
+}
+
+#menu {
+  display: none;
+}
+
+@media (max-width:655px) {
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 49px;
+    z-index: 1;
+    width: 100%;
+    background-color: gray;
+    &:hover {
+      background-color: #404040;
+    }
+  }
+  .my_navbar:not(#logo) {
+    display: none;
+  }
+  #nav-button {
+    display: block;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width:656px) and (max-width:1000px) {}
+
+@media (min-width:1000px) {}

@@ -1,68 +1,141 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 5, ../../../Downloads/compass 2.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+/* line 1, ../sass/screen.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 5, ../sass/screen.scss */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* line 11, ../sass/screen.scss */
+body {
+  font-family: sans-serif;
+  background-color: #f7f7f7;
+}
+
+/* line 16, ../sass/screen.scss */
+a:focus,
+button:focus,
+input:focus {
+  outline: none;
+}
+
+/* line 22, ../sass/screen.scss */
+nav {
+  position: relative;
+}
+/* line 24, ../sass/screen.scss */
+nav ul {
   margin: 0;
   padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
+  background-color: #333333;
+  position: relative;
+  height: 52px;
+  width: 100%;
 }
-
-/* line 22, ../../../Downloads/compass 2.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-html {
-  line-height: 1;
+/* line 31, ../sass/screen.scss */
+nav ul .my_navbar {
+  display: inline-block;
+  width: 15%;
+  margin: 0px 2.2% 0px;
 }
-
-/* line 24, ../../../Downloads/compass 2.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
-  list-style: none;
-}
-
-/* line 26, ../../../Downloads/compass 2.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* line 28, ../../../Downloads/compass 2.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-/* line 30, ../../../Downloads/compass 2.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: none;
-}
-/* line 103, ../../../Downloads/compass 2.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
-}
-
-/* line 32, ../../../Downloads/compass 2.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-a img {
-  border: none;
-}
-
-/* line 116, ../../../Downloads/compass 2.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+/* line 35, ../sass/screen.scss */
+nav ul .my_navbar a {
   display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+/* line 41, ../sass/screen.scss */
+nav ul .my_navbar a:hover {
+  background-color: gray;
+  transition: background-color .5s;
+  cursor: pointer;
+}
+
+/* line 51, ../sass/screen.scss */
+#logo {
+  vertical-align: top;
+}
+/* line 53, ../sass/screen.scss */
+#logo a {
+  font: 300 25px sans-serif;
+  padding: 11.5px;
+}
+
+/* line 59, ../sass/screen.scss */
+#nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  right: 10px;
+  background-color: transparent;
+  height: 100%;
+  display: none;
+}
+
+/* line 70, ../sass/screen.scss */
+.rotate {
+  -webkit-transform-origin: 50% 50% 0 !important;
+  -webkit-transform: translateY(-50%) rotate(90deg) !important;
+  -webkit-transition: transform .5s;
+}
+
+/* line 76, ../sass/screen.scss */
+.reverse-rotate {
+  transform: rotate(-90deg);
+  transition: transform .5s;
+}
+
+/* line 81, ../sass/screen.scss */
+.lines,
+.line:hover {
+  border-bottom: 4px solid white;
+  content: "";
+  height: 1px;
+  width: 25px;
+  margin: 4px;
+  pointer: hand;
+  display: block;
+}
+
+/* line 92, ../sass/screen.scss */
+#menu {
+  display: none;
+}
+
+@media (max-width: 655px) {
+  /* line 97, ../sass/screen.scss */
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 49px;
+    z-index: 1;
+    width: 100%;
+    background-color: gray;
+  }
+  /* line 105, ../sass/screen.scss */
+  #menu:hover {
+    background-color: #404040;
+  }
+
+  /* line 109, ../sass/screen.scss */
+  .my_navbar:not(#logo) {
+    display: none;
+  }
+
+  /* line 112, ../sass/screen.scss */
+  #nav-button {
+    display: block;
+  }
+  /* line 114, ../sass/screen.scss */
+  #nav-button:hover {
+    cursor: pointer;
+  }
 }
