@@ -2,6 +2,156 @@ html {
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+}
+
+.bg {
+  /* Set rules to fill background */
+  /* Set up proportionate scaling */
+  position: relative;
+  width: 100%;
+  height: 94vh;
+  /* Set up positioning */
+  background-color: gray;
+}
+
+.cb-slideshow,
+.cb-slideshow:after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+}
+
+.cb-slideshow:after {
+  content: '';
+  background: transparent url(../images/pattern.png) repeat top left;
+}
+
+.cb-slideshow li span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 48s linear infinite 0s;
+}
+
+.cb-slideshow li div {
+  z-index: 1000;
+  position: absolute;
+  bottom: 30px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  color: #fff;
+  animation: titleAnimation 48s linear infinite 0s;
+}
+
+.cb-slideshow li div h3 {
+  font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+  font-size: 240px;
+  padding: 0;
+  line-height: 200px;
+}
+
+.cb-slideshow li:nth-child(1) span {
+  background-image: url(http://www.urbnlivn.com/wp-content/uploads/2012/08/Bellevue-Terrace-05.jpg)
+}
+
+.cb-slideshow li:nth-child(2) span {
+  background-image: url(http://myposhomedia.com/wp-content/uploads/2016/04/apartments-inside-san-francisco-apartments-inside-gta-5-apartments-apartments-inside-bedrooms.jpg);
+  animation-delay: 7s;
+}
+
+.cb-slideshow li:nth-child(3) span {
+  background-image: url(https://media-cdn.tripadvisor.com/media/photo-s/02/f5/c5/af/inside-barcelona-apartments.jpg);
+  animation-delay: 15s;
+}
+
+.cb-slideshow li:nth-child(4) span {
+  background-image: url(https://i.ytimg.com/vi/UgsRYV7Xjv8/maxresdefault.jpg);
+  animation-delay: 23s;
+}
+
+.cb-slideshow li:nth-child(5) span {
+  background-image: url(http://kingofwallpapers.com/house/house-002.jpg);
+  animation-delay: 31s;
+}
+
+.cb-slideshow li:nth-child(6) span {
+  background-image: url(http://www.designbasics.com/Designs/42200/42285fe.gif);
+  animation-delay: 39s;
+}
+
+.cb-slideshow li:nth-child(2) div {
+  animation-delay: 7s;
+}
+
+.cb-slideshow li:nth-child(3) div {
+  animation-delay: 15s;
+}
+
+.cb-slideshow li:nth-child(4) div {
+  animation-delay: 23s;
+}
+
+.cb-slideshow li:nth-child(5) div {
+  animation-delay: 31s;
+}
+
+.cb-slideshow li:nth-child(6) div {
+  animation-delay: 39s;
+}
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  6% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  17% {
+    opacity: 1
+  }
+  23% {
+    opacity: 0
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+@keyframes titleAnimation {
+  0% {
+    opacity: 0
+  }
+  6% {
+    opacity: 1
+  }
+  17% {
+    opacity: 1
+  }
+  19% {
+    opacity: 0
+  }
+  100% {
+    opacity: 0
+  }
+}
+
 *,
 *:before,
 *:after {
@@ -11,6 +161,7 @@ html {
 body {
   font-family: sans-serif;
   background-color: #f7f7f7;
+  width: 100%;
 }
 
 a:focus,
@@ -31,7 +182,7 @@ nav {
     .my_navbar {
       display: inline-block;
       width: 15%;
-      margin: 0px 2.2% 0px;
+      margin: 0px 2.25% 0px;
       a {
         display: block;
         color: white;
@@ -116,6 +267,10 @@ nav {
       }
     }
   }
+}
+
+#test {
+  background-color: antiquewhite;
 }
 
 @media (max-width:655px) {

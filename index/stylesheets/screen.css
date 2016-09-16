@@ -4,30 +4,197 @@ html {
 }
 
 /* line 5, ../sass/screen.scss */
+ul {
+  list-style: none;
+}
+
+/* line 9, ../sass/screen.scss */
+.bg {
+  /* Set rules to fill background */
+  /* Set up proportionate scaling */
+  position: relative;
+  width: 100%;
+  height: 94vh;
+  /* Set up positioning */
+  background-color: gray;
+}
+
+/* line 19, ../sass/screen.scss */
+.cb-slideshow,
+.cb-slideshow:after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+}
+
+/* line 29, ../sass/screen.scss */
+.cb-slideshow:after {
+  content: '';
+  background: transparent url(../images/pattern.png) repeat top left;
+}
+
+/* line 34, ../sass/screen.scss */
+.cb-slideshow li span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 48s linear infinite 0s;
+}
+
+/* line 49, ../sass/screen.scss */
+.cb-slideshow li div {
+  z-index: 1000;
+  position: absolute;
+  bottom: 30px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  color: #fff;
+  animation: titleAnimation 48s linear infinite 0s;
+}
+
+/* line 61, ../sass/screen.scss */
+.cb-slideshow li div h3 {
+  font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+  font-size: 240px;
+  padding: 0;
+  line-height: 200px;
+}
+
+/* line 68, ../sass/screen.scss */
+.cb-slideshow li:nth-child(1) span {
+  background-image: url(http://www.urbnlivn.com/wp-content/uploads/2012/08/Bellevue-Terrace-05.jpg);
+}
+
+/* line 72, ../sass/screen.scss */
+.cb-slideshow li:nth-child(2) span {
+  background-image: url(http://myposhomedia.com/wp-content/uploads/2016/04/apartments-inside-san-francisco-apartments-inside-gta-5-apartments-apartments-inside-bedrooms.jpg);
+  animation-delay: 7s;
+}
+
+/* line 77, ../sass/screen.scss */
+.cb-slideshow li:nth-child(3) span {
+  background-image: url(https://media-cdn.tripadvisor.com/media/photo-s/02/f5/c5/af/inside-barcelona-apartments.jpg);
+  animation-delay: 15s;
+}
+
+/* line 82, ../sass/screen.scss */
+.cb-slideshow li:nth-child(4) span {
+  background-image: url(https://i.ytimg.com/vi/UgsRYV7Xjv8/maxresdefault.jpg);
+  animation-delay: 23s;
+}
+
+/* line 87, ../sass/screen.scss */
+.cb-slideshow li:nth-child(5) span {
+  background-image: url(http://kingofwallpapers.com/house/house-002.jpg);
+  animation-delay: 31s;
+}
+
+/* line 92, ../sass/screen.scss */
+.cb-slideshow li:nth-child(6) span {
+  background-image: url(http://www.designbasics.com/Designs/42200/42285fe.gif);
+  animation-delay: 39s;
+}
+
+/* line 97, ../sass/screen.scss */
+.cb-slideshow li:nth-child(2) div {
+  animation-delay: 7s;
+}
+
+/* line 101, ../sass/screen.scss */
+.cb-slideshow li:nth-child(3) div {
+  animation-delay: 15s;
+}
+
+/* line 105, ../sass/screen.scss */
+.cb-slideshow li:nth-child(4) div {
+  animation-delay: 23s;
+}
+
+/* line 109, ../sass/screen.scss */
+.cb-slideshow li:nth-child(5) div {
+  animation-delay: 31s;
+}
+
+/* line 113, ../sass/screen.scss */
+.cb-slideshow li:nth-child(6) div {
+  animation-delay: 39s;
+}
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  6% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  17% {
+    opacity: 1;
+  }
+  23% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes titleAnimation {
+  0% {
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  17% {
+    opacity: 1;
+  }
+  19% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* line 155, ../sass/screen.scss */
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
 
-/* line 11, ../sass/screen.scss */
+/* line 161, ../sass/screen.scss */
 body {
   font-family: sans-serif;
   background-color: #f7f7f7;
+  width: 100%;
 }
 
-/* line 16, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 a:focus,
 button:focus,
 input:focus {
   outline: none;
 }
 
-/* line 22, ../sass/screen.scss */
+/* line 173, ../sass/screen.scss */
 nav {
   position: relative;
 }
-/* line 24, ../sass/screen.scss */
+/* line 175, ../sass/screen.scss */
 nav ul {
   margin: 0;
   padding: 0;
@@ -36,13 +203,13 @@ nav ul {
   height: 52px;
   width: 100%;
 }
-/* line 31, ../sass/screen.scss */
+/* line 182, ../sass/screen.scss */
 nav ul .my_navbar {
   display: inline-block;
   width: 15%;
-  margin: 0px 2.2% 0px;
+  margin: 0px 2.25% 0px;
 }
-/* line 35, ../sass/screen.scss */
+/* line 186, ../sass/screen.scss */
 nav ul .my_navbar a {
   display: block;
   color: white;
@@ -50,24 +217,24 @@ nav ul .my_navbar a {
   padding: 16px;
   text-decoration: none;
 }
-/* line 41, ../sass/screen.scss */
+/* line 192, ../sass/screen.scss */
 nav ul .my_navbar a:hover {
   background-color: gray;
   transition: background-color .5s;
   cursor: pointer;
 }
 
-/* line 51, ../sass/screen.scss */
+/* line 202, ../sass/screen.scss */
 #logo {
   vertical-align: top;
 }
-/* line 53, ../sass/screen.scss */
+/* line 204, ../sass/screen.scss */
 #logo a {
   font: 300 25px sans-serif;
   padding: 11.5px;
 }
 
-/* line 59, ../sass/screen.scss */
+/* line 210, ../sass/screen.scss */
 #nav-button {
   position: absolute;
   top: 50%;
@@ -79,20 +246,20 @@ nav ul .my_navbar a:hover {
   display: none;
 }
 
-/* line 70, ../sass/screen.scss */
+/* line 221, ../sass/screen.scss */
 .rotate {
   -webkit-transform-origin: 50% 50% 0 !important;
   -webkit-transform: translateY(-50%) rotate(90deg) !important;
   -webkit-transition: transform .5s;
 }
 
-/* line 76, ../sass/screen.scss */
+/* line 227, ../sass/screen.scss */
 .reverse-rotate {
   transform: rotate(-90deg);
   transition: transform .5s;
 }
 
-/* line 81, ../sass/screen.scss */
+/* line 232, ../sass/screen.scss */
 .lines,
 .line:hover {
   border-bottom: 4px solid white;
@@ -104,7 +271,7 @@ nav ul .my_navbar a:hover {
   display: block;
 }
 
-/* line 92, ../sass/screen.scss */
+/* line 243, ../sass/screen.scss */
 #menu {
   display: none;
   margin: 0;
@@ -115,12 +282,12 @@ nav ul .my_navbar a:hover {
   width: 100%;
   border-bottom: solid .5px gray;
 }
-/* line 101, ../sass/screen.scss */
+/* line 252, ../sass/screen.scss */
 #menu li {
   border: solid .5px gray;
   border-collapse: collapse;
 }
-/* line 104, ../sass/screen.scss */
+/* line 255, ../sass/screen.scss */
 #menu li a {
   font: 300 20px sans-serif;
   display: block;
@@ -129,7 +296,7 @@ nav ul .my_navbar a:hover {
   padding: 16px;
   text-decoration: none;
 }
-/* line 111, ../sass/screen.scss */
+/* line 262, ../sass/screen.scss */
 #menu li a:hover {
   background-color: #333333;
   color: white;
@@ -137,8 +304,13 @@ nav ul .my_navbar a:hover {
   cursor: pointer;
 }
 
+/* line 272, ../sass/screen.scss */
+#test {
+  background-color: antiquewhite;
+}
+
 @media (max-width: 655px) {
-  /* line 122, ../sass/screen.scss */
+  /* line 277, ../sass/screen.scss */
   #menu {
     display: none;
     position: absolute;
@@ -148,28 +320,28 @@ nav ul .my_navbar a:hover {
     width: 100%;
   }
 
-  /* line 130, ../sass/screen.scss */
+  /* line 285, ../sass/screen.scss */
   .my_navbar:not(#logo) {
     display: none;
   }
 
-  /* line 133, ../sass/screen.scss */
+  /* line 288, ../sass/screen.scss */
   #nav-button {
     display: block;
   }
-  /* line 135, ../sass/screen.scss */
+  /* line 290, ../sass/screen.scss */
   #nav-button:hover {
     cursor: pointer;
   }
 }
 @media (min-width: 656px) and (max-width: 1000px) {
-  /* line 142, ../sass/screen.scss */
+  /* line 297, ../sass/screen.scss */
   #menu {
     display: none !important;
   }
 }
 @media (min-width: 1000px) {
-  /* line 148, ../sass/screen.scss */
+  /* line 303, ../sass/screen.scss */
   #menu {
     display: none !important;
   }
