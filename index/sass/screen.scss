@@ -60,9 +60,7 @@ ul {
 
 .cb-slideshow li div h3 {
   font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
-  font-size: 240px;
   padding: 0;
-  line-height: 200px;
 }
 
 .cb-slideshow li:nth-child(1) span {
@@ -269,8 +267,15 @@ nav {
   }
 }
 
-#test {
-  background-color: antiquewhite;
+.div {
+  height: 400px;
+}
+
+.background {
+  margin: 20px 0px 20px;
+  height: 90%;
+  width: 100%;
+  background: blue;
 }
 
 @media (max-width:655px) {
@@ -293,13 +298,18 @@ nav {
   }
 }
 
-@media (min-width:656px) and (max-width:1000px) {
+footer {
+  background-color: bisque;
+  height: 300px;
+}
+
+@media (min-width:656px) and (max-width:990px) {
   #menu {
     display: none !important;
   }
 }
 
-@media (min-width:1000px) {
+@media (min-width:990px) {
   #menu {
     display: none !important;
   }
