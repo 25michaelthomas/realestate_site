@@ -10,8 +10,6 @@ ul {
 
 /* line 9, ../sass/screen.scss */
 .bg {
-  /* Set rules to fill background */
-  /* Set up proportionate scaling */
   position: relative;
   width: 100%;
   height: 94vh;
@@ -19,7 +17,45 @@ ul {
   background-color: gray;
 }
 
-/* line 19, ../sass/screen.scss */
+/* line 17, ../sass/screen.scss */
+#search {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 2;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* line 28, ../sass/screen.scss */
+input[type=text] {
+  color: white;
+  z-index: 2;
+  width: 75%;
+  max-width: 700px;
+  height: 39px;
+  border-radius: 10px;
+  border: none;
+  padding-left: 10px;
+}
+
+/* line 39, ../sass/screen.scss */
+input[type=button],
+input[type=button]:hover {
+  background-color: #FF7A5A;
+  color: white;
+  cursor: pointer;
+  height: 40px;
+  border: hidden;
+  width: 120px;
+  font-size: 16px;
+  margin-top: 5px;
+  border-radius: 10px;
+}
+
+/* line 52, ../sass/screen.scss */
 .cb-slideshow,
 .cb-slideshow:after {
   position: absolute;
@@ -30,13 +66,13 @@ ul {
   z-index: 0;
 }
 
-/* line 29, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 .cb-slideshow:after {
   content: '';
   background: transparent url(../images/pattern.png) repeat top left;
 }
 
-/* line 34, ../sass/screen.scss */
+/* line 67, ../sass/screen.scss */
 .cb-slideshow li span {
   width: 100%;
   height: 100%;
@@ -50,83 +86,84 @@ ul {
   opacity: 0;
   z-index: 0;
   animation: imageAnimation 48s linear infinite 0s;
+  filter: brightness(70%);
 }
 
-/* line 49, ../sass/screen.scss */
+/* line 83, ../sass/screen.scss */
 .cb-slideshow li div {
   z-index: 1000;
   position: absolute;
-  bottom: 30px;
+  bottom: 55%;
   left: 0px;
   width: 100%;
   text-align: center;
-  opacity: 0;
   color: #fff;
-  animation: titleAnimation 48s linear infinite 0s;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 93, ../sass/screen.scss */
 .cb-slideshow li div h3 {
   font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
   padding: 0;
+  font-weight: 400;
+  font-size: 30px;
 }
 
-/* line 66, ../sass/screen.scss */
+/* line 100, ../sass/screen.scss */
 .cb-slideshow li:nth-child(1) span {
   background-image: url(http://www.urbnlivn.com/wp-content/uploads/2012/08/Bellevue-Terrace-05.jpg);
 }
 
-/* line 70, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 .cb-slideshow li:nth-child(2) span {
   background-image: url(http://myposhomedia.com/wp-content/uploads/2016/04/apartments-inside-san-francisco-apartments-inside-gta-5-apartments-apartments-inside-bedrooms.jpg);
   animation-delay: 7s;
 }
 
-/* line 75, ../sass/screen.scss */
+/* line 109, ../sass/screen.scss */
 .cb-slideshow li:nth-child(3) span {
   background-image: url(https://media-cdn.tripadvisor.com/media/photo-s/02/f5/c5/af/inside-barcelona-apartments.jpg);
   animation-delay: 15s;
 }
 
-/* line 80, ../sass/screen.scss */
+/* line 114, ../sass/screen.scss */
 .cb-slideshow li:nth-child(4) span {
   background-image: url(https://i.ytimg.com/vi/UgsRYV7Xjv8/maxresdefault.jpg);
   animation-delay: 23s;
 }
 
-/* line 85, ../sass/screen.scss */
+/* line 119, ../sass/screen.scss */
 .cb-slideshow li:nth-child(5) span {
   background-image: url(http://kingofwallpapers.com/house/house-002.jpg);
   animation-delay: 31s;
 }
 
-/* line 90, ../sass/screen.scss */
+/* line 124, ../sass/screen.scss */
 .cb-slideshow li:nth-child(6) span {
   background-image: url(http://www.designbasics.com/Designs/42200/42285fe.gif);
   animation-delay: 39s;
 }
 
-/* line 95, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 .cb-slideshow li:nth-child(2) div {
   animation-delay: 7s;
 }
 
-/* line 99, ../sass/screen.scss */
+/* line 133, ../sass/screen.scss */
 .cb-slideshow li:nth-child(3) div {
   animation-delay: 15s;
 }
 
-/* line 103, ../sass/screen.scss */
+/* line 137, ../sass/screen.scss */
 .cb-slideshow li:nth-child(4) div {
   animation-delay: 23s;
 }
 
-/* line 107, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 .cb-slideshow li:nth-child(5) div {
   animation-delay: 31s;
 }
 
-/* line 111, ../sass/screen.scss */
+/* line 145, ../sass/screen.scss */
 .cb-slideshow li:nth-child(6) div {
   animation-delay: 39s;
 }
@@ -150,49 +187,32 @@ ul {
     opacity: 0;
   }
 }
-@keyframes titleAnimation {
-  0% {
-    opacity: 0;
-  }
-  6% {
-    opacity: 1;
-  }
-  17% {
-    opacity: 1;
-  }
-  19% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-/* line 153, ../sass/screen.scss */
+/* line 169, ../sass/screen.scss */
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
 
-/* line 159, ../sass/screen.scss */
+/* line 175, ../sass/screen.scss */
 body {
   font-family: sans-serif;
   background-color: #f7f7f7;
   width: 100%;
 }
 
-/* line 165, ../sass/screen.scss */
+/* line 181, ../sass/screen.scss */
 a:focus,
 button:focus,
 input:focus {
   outline: none;
 }
 
-/* line 171, ../sass/screen.scss */
+/* line 187, ../sass/screen.scss */
 nav {
   position: relative;
 }
-/* line 173, ../sass/screen.scss */
+/* line 189, ../sass/screen.scss */
 nav ul {
   margin: 0;
   padding: 0;
@@ -201,13 +221,13 @@ nav ul {
   height: 52px;
   width: 100%;
 }
-/* line 180, ../sass/screen.scss */
+/* line 196, ../sass/screen.scss */
 nav ul .my_navbar {
   display: inline-block;
   width: 15%;
   margin: 0px 2.25% 0px;
 }
-/* line 184, ../sass/screen.scss */
+/* line 200, ../sass/screen.scss */
 nav ul .my_navbar a {
   display: block;
   color: white;
@@ -215,24 +235,24 @@ nav ul .my_navbar a {
   padding: 16px;
   text-decoration: none;
 }
-/* line 190, ../sass/screen.scss */
+/* line 206, ../sass/screen.scss */
 nav ul .my_navbar a:hover {
   background-color: gray;
   transition: background-color .5s;
   cursor: pointer;
 }
 
-/* line 200, ../sass/screen.scss */
+/* line 216, ../sass/screen.scss */
 #logo {
   vertical-align: top;
 }
-/* line 202, ../sass/screen.scss */
+/* line 218, ../sass/screen.scss */
 #logo a {
   font: 300 25px sans-serif;
   padding: 11.5px;
 }
 
-/* line 208, ../sass/screen.scss */
+/* line 224, ../sass/screen.scss */
 #nav-button {
   position: absolute;
   top: 50%;
@@ -244,20 +264,20 @@ nav ul .my_navbar a:hover {
   display: none;
 }
 
-/* line 219, ../sass/screen.scss */
+/* line 235, ../sass/screen.scss */
 .rotate {
   -webkit-transform-origin: 50% 50% 0 !important;
   -webkit-transform: translateY(-50%) rotate(90deg) !important;
   -webkit-transition: transform .5s;
 }
 
-/* line 225, ../sass/screen.scss */
+/* line 241, ../sass/screen.scss */
 .reverse-rotate {
   transform: rotate(-90deg);
   transition: transform .5s;
 }
 
-/* line 230, ../sass/screen.scss */
+/* line 246, ../sass/screen.scss */
 .lines,
 .line:hover {
   border-bottom: 4px solid white;
@@ -269,7 +289,7 @@ nav ul .my_navbar a:hover {
   display: block;
 }
 
-/* line 241, ../sass/screen.scss */
+/* line 257, ../sass/screen.scss */
 #menu {
   display: none;
   margin: 0;
@@ -280,12 +300,12 @@ nav ul .my_navbar a:hover {
   width: 100%;
   border-bottom: solid .5px gray;
 }
-/* line 250, ../sass/screen.scss */
+/* line 266, ../sass/screen.scss */
 #menu li {
   border: solid .5px gray;
   border-collapse: collapse;
 }
-/* line 253, ../sass/screen.scss */
+/* line 269, ../sass/screen.scss */
 #menu li a {
   font: 300 20px sans-serif;
   display: block;
@@ -294,7 +314,7 @@ nav ul .my_navbar a:hover {
   padding: 16px;
   text-decoration: none;
 }
-/* line 260, ../sass/screen.scss */
+/* line 276, ../sass/screen.scss */
 #menu li a:hover {
   background-color: #333333;
   color: white;
@@ -302,21 +322,63 @@ nav ul .my_navbar a:hover {
   cursor: pointer;
 }
 
-/* line 270, ../sass/screen.scss */
+/* line 286, ../sass/screen.scss */
 .div {
   height: 400px;
 }
 
-/* line 274, ../sass/screen.scss */
+/* line 290, ../sass/screen.scss */
 .background {
   margin: 20px 0px 20px;
   height: 90%;
   width: 100%;
-  background: blue;
+  position: relative;
+}
+
+/* line 297, ../sass/screen.scss */
+.cities {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font: 400 30px sans-serif;
+}
+
+/* line 306, ../sass/screen.scss */
+.divider {
+  margin-top: 40px;
+}
+
+/* line 311, ../sass/screen.scss */
+#san_diego:before, #dallas:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  filter: brightness(75%);
+  background-image: url(http://www.welcometosandiego.com/wp-content/uploads/2010/02/C-Street-Vision.jpg);
+}
+
+/* line 328, ../sass/screen.scss */
+#dallas:before {
+  background-image: url(https://www.chcp.edu/sites/default/files/content/CHCP-Dallas-Campus.jpg);
+}
+
+/* line 333, ../sass/screen.scss */
+footer {
+  background-color: bisque;
+  height: 300px;
+  margin-top: 30px;
 }
 
 @media (max-width: 655px) {
-  /* line 282, ../sass/screen.scss */
+  /* line 340, ../sass/screen.scss */
   #menu {
     display: none;
     position: absolute;
@@ -326,34 +388,43 @@ nav ul .my_navbar a:hover {
     width: 100%;
   }
 
-  /* line 290, ../sass/screen.scss */
+  /* line 348, ../sass/screen.scss */
   .my_navbar:not(#logo) {
     display: none;
   }
 
-  /* line 293, ../sass/screen.scss */
+  /* line 351, ../sass/screen.scss */
   #nav-button {
     display: block;
   }
-  /* line 295, ../sass/screen.scss */
+  /* line 353, ../sass/screen.scss */
   #nav-button:hover {
     cursor: pointer;
   }
 }
-/* line 301, ../sass/screen.scss */
-footer {
-  background-color: bisque;
-  height: 300px;
+@media (max-width: 620px) {
+  /* line 360, ../sass/screen.scss */
+  #search {
+    width: 100%;
+  }
+  /* line 362, ../sass/screen.scss */
+  #search input[type=text] {
+    width: 60%;
+  }
+  /* line 365, ../sass/screen.scss */
+  #search input[type=button],
+  #search input[type=button]:hover {
+    width: 90px;
+  }
 }
-
 @media (min-width: 656px) and (max-width: 990px) {
-  /* line 307, ../sass/screen.scss */
+  /* line 373, ../sass/screen.scss */
   #menu {
     display: none !important;
   }
 }
 @media (min-width: 990px) {
-  /* line 313, ../sass/screen.scss */
+  /* line 379, ../sass/screen.scss */
   #menu {
     display: none !important;
   }

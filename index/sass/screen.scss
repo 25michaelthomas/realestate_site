@@ -7,13 +7,46 @@ ul {
 }
 
 .bg {
-  /* Set rules to fill background */
-  /* Set up proportionate scaling */
   position: relative;
   width: 100%;
   height: 94vh;
   /* Set up positioning */
   background-color: gray;
+}
+
+#search {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 2;
+  width: 80%;
+  max-width: 700px;
+}
+
+input[type=text] {
+  color: white;
+  z-index: 2;
+  width: 75%;
+  max-width: 700px;
+  height: 39px;
+  border-radius: 10px;
+  border: none;
+  padding-left: 10px;
+}
+
+input[type=button],
+input[type=button]:hover {
+  background-color: #FF7A5A;
+  color: white;
+  cursor: pointer;
+  height: 40px;
+  border: hidden;
+  width: 120px;
+  font-size: 16px;
+  margin-top: 5px;
+  border-radius: 10px;
 }
 
 .cb-slideshow,
@@ -44,23 +77,24 @@ ul {
   opacity: 0;
   z-index: 0;
   animation: imageAnimation 48s linear infinite 0s;
+  filter: brightness(70%);
 }
 
 .cb-slideshow li div {
   z-index: 1000;
   position: absolute;
-  bottom: 30px;
+  bottom: 55%;
   left: 0px;
   width: 100%;
   text-align: center;
-  opacity: 0;
   color: #fff;
-  animation: titleAnimation 48s linear infinite 0s;
 }
 
 .cb-slideshow li div h3 {
   font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
   padding: 0;
+  font-weight: 400;
+  font-size: 30px;
 }
 
 .cb-slideshow li:nth-child(1) span {
@@ -125,24 +159,6 @@ ul {
     opacity: 1
   }
   23% {
-    opacity: 0
-  }
-  100% {
-    opacity: 0
-  }
-}
-
-@keyframes titleAnimation {
-  0% {
-    opacity: 0
-  }
-  6% {
-    opacity: 1
-  }
-  17% {
-    opacity: 1
-  }
-  19% {
     opacity: 0
   }
   100% {
@@ -275,7 +291,49 @@ nav {
   margin: 20px 0px 20px;
   height: 90%;
   width: 100%;
-  background: blue;
+  position: relative;
+}
+
+.cities {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font: 400 30px sans-serif;
+}
+
+.divider {
+  margin-top: 40px;
+}
+
+#san_diego {
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    filter: brightness(75%);
+    background-image: url(http://www.welcometosandiego.com/wp-content/uploads/2010/02/C-Street-Vision.jpg);
+  }
+}
+
+#dallas {
+  @extend #san_diego;
+  &:before {
+    background-image: url(https://www.chcp.edu/sites/default/files/content/CHCP-Dallas-Campus.jpg);
+  }
+}
+
+footer {
+  background-color: bisque;
+  height: 300px;
+  margin-top: 30px;
 }
 
 @media (max-width:655px) {
@@ -298,9 +356,17 @@ nav {
   }
 }
 
-footer {
-  background-color: bisque;
-  height: 300px;
+@media(max-width:620px) {
+  #search {
+    width: 100%;
+    input[type=text] {
+      width: 60%;
+    }
+    input[type=button],
+    input[type=button]:hover {
+      width: 90px;
+    }
+  }
 }
 
 @media (min-width:656px) and (max-width:990px) {
