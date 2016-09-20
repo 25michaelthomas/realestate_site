@@ -1,6 +1,205 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+html {
+  box-sizing: border-box;
+}
 
-@import "compass/reset";
+body {
+  background-color: antiquewhite;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a:focus,
+button:focus,
+input:focus {
+  outline: none;
+}
+
+nav {
+  position: relative;
+  z-index: 3;
+  ul {
+    margin: 0;
+    padding: 0;
+    background-color: #333333;
+    position: relative;
+    height: 52px;
+    width: 100%;
+    .my_navbar {
+      display: inline-block;
+      width: 15%;
+      margin: 0px 2.25% 0px;
+      a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+        &:hover {
+          background-color: gray;
+          transition: background-color .5s;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+#logo {
+  vertical-align: top;
+  a {
+    font: 300 25px sans-serif;
+    padding: 11.5px;
+  }
+}
+
+#nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  right: 10px;
+  background-color: transparent;
+  height: 100%;
+  display: none;
+}
+
+.rotate {
+  -webkit-transform-origin: 50% 50% 0 !important;
+  -webkit-transform: translateY(-50%) rotate(90deg) !important;
+  -webkit-transition: transform .5s;
+}
+
+.reverse-rotate {
+  transform: rotate(-90deg);
+  transition: transform .5s;
+}
+
+.lines,
+.line:hover {
+  border-bottom: 4px solid white;
+  content: "";
+  height: 1px;
+  width: 25px;
+  margin: 4px;
+  pointer: hand;
+  display: block;
+}
+
+#menu {
+  display: none;
+  margin: 0;
+  padding: 0;
+  background-color: #cccccc;
+  position: absolute;
+  height: auto;
+  width: 100%;
+  border-bottom: solid .5px gray;
+  z-index: 100000;
+  li {
+    border: solid .5px gray;
+    border-collapse: collapse;
+    a {
+      font: 300 20px sans-serif;
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 16px;
+      text-decoration: none;
+      &:hover {
+        background-color: #333333;
+        color: white;
+        transition: background-color .5s, color .5s;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+input[type="text"] {
+  height: 30px;
+  border-radius: 5px 0px 0px 5px;
+  border: none;
+  padding-left: 10px;
+}
+
+@media (max-width:655px) {
+  #menu {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 49px;
+    z-index: 1;
+    width: 100%;
+  }
+  .my_navbar:not(#logo) {
+    display: none;
+  }
+  #nav-button {
+    display: block;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  nav:not(#footer) {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .bg {
+    margin-top: 52px;
+  }
+}
+
+#logo {
+  width: 50px;
+  margin-left: 10px;
+}
+
+input[type="text"] {
+  width: 80%;
+  margin: 10px 10px 0px 0px;
+  margin-right: -2px;
+  z-index: 3;
+}
+
+#search {
+  text-align: center;
+  width: 60%;
+  position: fixed;
+  z-index: 3;
+  transform: translateX(-50%);
+  left: 50%;
+  z-index: 3;
+  height: auto;
+  margin-left: 10px;
+  div {
+    display: inline;
+  }
+  span,
+  span:hover {
+    margin: 9px 0px;
+    margin-left: -3px;
+    z-index: 3;
+    padding: 8px;
+    border-radius: 0px 5px 5px 0px;
+    background-color: white;
+    cursor: pointer;
+    vertical-align: top;
+  }
+}
+
+@media (min-width:656px) {
+  #menu {
+    display: none !important;
+  }
+}
+
+@media (min-width:990px) {
+  #menu {
+    display: none !important;
+  }
+}
