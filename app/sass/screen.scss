@@ -50,6 +50,7 @@ nav {
 
 #logo {
   vertical-align: top;
+  width: 15%;
   a {
     font: 300 25px sans-serif;
     padding: 11.5px;
@@ -157,6 +158,11 @@ input[type="text"] {
 #logo {
   width: 50px;
   margin-left: 10px;
+  a {
+    &:hover {
+      background-color: #333333;
+    }
+  }
 }
 
 input[type="text"] {
@@ -192,9 +198,29 @@ input[type="text"] {
   }
 }
 
+#filters,
+#filters:hover {
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  width: 130px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  background-color: #333333;
+  color: white;
+  border-radius: 29px;
+  font: 400 20px sans-serif;
+}
+
 @media (min-width:656px) {
   #menu {
     display: none !important;
+  }
+  nav {
+    text-align: center;
   }
 }
 

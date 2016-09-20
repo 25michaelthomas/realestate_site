@@ -60,14 +60,15 @@ nav ul .my_navbar a:hover {
 /* line 51, ../sass/screen.scss */
 #logo {
   vertical-align: top;
+  width: 15%;
 }
-/* line 53, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 #logo a {
   font: 300 25px sans-serif;
   padding: 11.5px;
 }
 
-/* line 59, ../sass/screen.scss */
+/* line 60, ../sass/screen.scss */
 #nav-button {
   position: absolute;
   top: 50%;
@@ -79,20 +80,20 @@ nav ul .my_navbar a:hover {
   display: none;
 }
 
-/* line 70, ../sass/screen.scss */
+/* line 71, ../sass/screen.scss */
 .rotate {
   -webkit-transform-origin: 50% 50% 0 !important;
   -webkit-transform: translateY(-50%) rotate(90deg) !important;
   -webkit-transition: transform .5s;
 }
 
-/* line 76, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 .reverse-rotate {
   transform: rotate(-90deg);
   transition: transform .5s;
 }
 
-/* line 81, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 .lines,
 .line:hover {
   border-bottom: 4px solid white;
@@ -104,7 +105,7 @@ nav ul .my_navbar a:hover {
   display: block;
 }
 
-/* line 92, ../sass/screen.scss */
+/* line 93, ../sass/screen.scss */
 #menu {
   display: none;
   margin: 0;
@@ -116,12 +117,12 @@ nav ul .my_navbar a:hover {
   border-bottom: solid .5px gray;
   z-index: 100000;
 }
-/* line 102, ../sass/screen.scss */
+/* line 103, ../sass/screen.scss */
 #menu li {
   border: solid .5px gray;
   border-collapse: collapse;
 }
-/* line 105, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 #menu li a {
   font: 300 20px sans-serif;
   display: block;
@@ -130,7 +131,7 @@ nav ul .my_navbar a:hover {
   padding: 16px;
   text-decoration: none;
 }
-/* line 112, ../sass/screen.scss */
+/* line 113, ../sass/screen.scss */
 #menu li a:hover {
   background-color: #333333;
   color: white;
@@ -138,7 +139,7 @@ nav ul .my_navbar a:hover {
   cursor: pointer;
 }
 
-/* line 122, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 input[type="text"] {
   height: 30px;
   border-radius: 5px 0px 0px 5px;
@@ -147,7 +148,7 @@ input[type="text"] {
 }
 
 @media (max-width: 655px) {
-  /* line 130, ../sass/screen.scss */
+  /* line 131, ../sass/screen.scss */
   #menu {
     display: none;
     position: absolute;
@@ -157,39 +158,43 @@ input[type="text"] {
     width: 100%;
   }
 
-  /* line 138, ../sass/screen.scss */
+  /* line 139, ../sass/screen.scss */
   .my_navbar:not(#logo) {
     display: none;
   }
 
-  /* line 141, ../sass/screen.scss */
+  /* line 142, ../sass/screen.scss */
   #nav-button {
     display: block;
   }
-  /* line 143, ../sass/screen.scss */
+  /* line 144, ../sass/screen.scss */
   #nav-button:hover {
     cursor: pointer;
   }
 
-  /* line 147, ../sass/screen.scss */
+  /* line 148, ../sass/screen.scss */
   nav:not(#footer) {
     position: fixed;
     top: 0;
     width: 100%;
   }
 
-  /* line 152, ../sass/screen.scss */
+  /* line 153, ../sass/screen.scss */
   .bg {
     margin-top: 52px;
   }
 }
-/* line 157, ../sass/screen.scss */
+/* line 158, ../sass/screen.scss */
 #logo {
   width: 50px;
   margin-left: 10px;
 }
-
 /* line 162, ../sass/screen.scss */
+#logo a:hover {
+  background-color: #333333;
+}
+
+/* line 168, ../sass/screen.scss */
 input[type="text"] {
   width: 80%;
   margin: 10px 10px 0px 0px;
@@ -197,7 +202,7 @@ input[type="text"] {
   z-index: 3;
 }
 
-/* line 169, ../sass/screen.scss */
+/* line 175, ../sass/screen.scss */
 #search {
   text-align: center;
   width: 60%;
@@ -209,11 +214,11 @@ input[type="text"] {
   height: auto;
   margin-left: 10px;
 }
-/* line 179, ../sass/screen.scss */
+/* line 185, ../sass/screen.scss */
 #search div {
   display: inline;
 }
-/* line 182, ../sass/screen.scss */
+/* line 188, ../sass/screen.scss */
 #search span,
 #search span:hover {
   margin: 9px 0px;
@@ -226,14 +231,37 @@ input[type="text"] {
   vertical-align: top;
 }
 
+/* line 201, ../sass/screen.scss */
+#filters,
+#filters:hover {
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  width: 130px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  background-color: #333333;
+  color: white;
+  border-radius: 29px;
+  font: 400 20px sans-serif;
+}
+
 @media (min-width: 656px) {
-  /* line 196, ../sass/screen.scss */
+  /* line 219, ../sass/screen.scss */
   #menu {
     display: none !important;
   }
+
+  /* line 222, ../sass/screen.scss */
+  nav {
+    text-align: center;
+  }
 }
 @media (min-width: 990px) {
-  /* line 202, ../sass/screen.scss */
+  /* line 228, ../sass/screen.scss */
   #menu {
     display: none !important;
   }
