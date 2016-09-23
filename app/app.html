@@ -46,6 +46,64 @@
     <div>
       <span class="glyphicon glyphicon-search"></span>
     </div>
+    <form id="other-filters">
+      <select name="Min Price">
+              <option>Min Price</option>
+              <option>$500+</option>
+              <option>$750+</option>
+              <option>$1000+</option>
+              <option>$1,250+</option>
+              <option>$1,500+</option>
+              <option>$1,500+</option>
+              <option>$1,750+</option>
+              <option>$2,000+</option>
+              <option>$2,500+</option>
+            </select>
+      <select name="Max Price">
+              <option>Max Price</option>
+              <option>$500+</option>
+              <option>$750+</option>
+              <option>$1000+</option>
+              <option>$1,250+</option>
+              <option>$1,500+</option>
+              <option>$1,500+</option>
+              <option>$1,750+</option>
+              <option>$2,000+</option>
+              <option>$2,500+</option>
+            </select>
+      <select name="Bathrooms">
+              <option>Bathrooms</option>
+              <option>0+</option>
+              <option>1+</option>
+              <option>1.5+</option>
+              <option>2+</option>
+              <option>3+</option>
+            </select>
+      <select name="Bedrooms">
+              <option>Bedrooms</option>
+              <option>0+</option>
+              <option>1+</option>
+              <option>2+</option>
+              <option>3+</option>
+              <option>4+</option>
+            </select>
+      <select name="lot size">
+              <option>Lot Size</option>
+              <option>2,000+ sqft</option>
+              <option>3,000+ sqft</option>
+              <option>4,000+ sqft</option>
+              <option>5,000+ sqft</option>
+              <option>7,500+ sqft</option>
+            </select>
+      <select name="Home type">
+             <option>Home type</option>
+              <option>House</option>
+              <option>Apartment</option>
+            </select>
+      <!-- 
+            list of checkboxes with neighborhoods from the city they selected. use angular to generate it.
+            -->
+    </form>
   </div>
   <a id="filters" data-toggle="modal" data-target="#myModal">Filters</a>
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="my_modal_label">
@@ -56,7 +114,64 @@
           <h4 class="modal-title" id="my_modal_label">Filter search results</h4>
         </div>
         <div class="modal-body">
-          ...
+          <form>
+            <select name="Min Price">
+              <option>Min Price</option>
+              <option>$500+</option>
+              <option>$750+</option>
+              <option>$1000+</option>
+              <option>$1,250+</option>
+              <option>$1,500+</option>
+              <option>$1,500+</option>
+              <option>$1,750+</option>
+              <option>$2,000+</option>
+              <option>$2,500+</option>
+            </select>
+            <select name="Max Price">
+              <option>Max Price</option>
+              <option>$500+</option>
+              <option>$750+</option>
+              <option>$1000+</option>
+              <option>$1,250+</option>
+              <option>$1,500+</option>
+              <option>$1,500+</option>
+              <option>$1,750+</option>
+              <option>$2,000+</option>
+              <option>$2,500+</option>
+            </select>
+            <select name="Bathrooms">
+              <option>Bathrooms</option>
+              <option>0+</option>
+              <option>1+</option>
+              <option>1.5+</option>
+              <option>2+</option>
+              <option>3+</option>
+            </select>
+            <select name="Bedrooms">
+              <option>Bedrooms</option>
+              <option>0+</option>
+              <option>1+</option>
+              <option>2+</option>
+              <option>3+</option>
+              <option>4+</option>
+            </select>
+            <select name="lot size">
+              <option>Lot Size</option>
+              <option>2,000+ sqft</option>
+              <option>3,000+ sqft</option>
+              <option>4,000+ sqft</option>
+              <option>5,000+ sqft</option>
+              <option>7,500+ sqft</option>
+            </select>
+            <select name="Home type">
+             <option>Home type</option>
+              <option>House</option>
+              <option>Apartment</option>
+            </select>
+            <!-- 
+            list of checkboxes with neighborhoods from the city they selected. use angular to generate it.
+            -->
+          </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
