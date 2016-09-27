@@ -41,13 +41,19 @@
       <li><a href="../about_page/about.html">Hotels</a></li>
     </ul>
   </nav>
+
   <div id="search">
     <input type="text" placeholder="Enter a city">
     <div>
       <span class="glyphicon glyphicon-search"></span>
     </div>
+    <div id="placeholder">
+      <p></p>
+    </div>
     <form id="other-filters">
-      <select name="Min Price">
+
+
+      <select name="Min Price" class="custom-select">
               <option>Min Price</option>
               <option>$500+</option>
               <option>$750+</option>
@@ -59,7 +65,7 @@
               <option>$2,000+</option>
               <option>$2,500+</option>
             </select>
-      <select name="Max Price">
+      <select name="Max Price" class="custom-select">
               <option>Max Price</option>
               <option>$500+</option>
               <option>$750+</option>
@@ -71,7 +77,7 @@
               <option>$2,000+</option>
               <option>$2,500+</option>
             </select>
-      <select name="Bathrooms">
+      <select name="Bathrooms" class="custom-select">
               <option>Bathrooms</option>
               <option>0+</option>
               <option>1+</option>
@@ -79,7 +85,7 @@
               <option>2+</option>
               <option>3+</option>
             </select>
-      <select name="Bedrooms">
+      <select name="Bedrooms" class="custom-select">
               <option>Bedrooms</option>
               <option>0+</option>
               <option>1+</option>
@@ -87,7 +93,7 @@
               <option>3+</option>
               <option>4+</option>
             </select>
-      <select name="lot size">
+      <select name="lot size" class="custom-select">
               <option>Lot Size</option>
               <option>2,000+ sqft</option>
               <option>3,000+ sqft</option>
@@ -95,14 +101,13 @@
               <option>5,000+ sqft</option>
               <option>7,500+ sqft</option>
             </select>
-      <select name="Home type">
+      <select name="Home type" class="custom-select">
              <option>Home type</option>
               <option>House</option>
               <option>Apartment</option>
             </select>
-      <!-- 
-            list of checkboxes with neighborhoods from the city they selected. use angular to generate it.
-            -->
+
+
     </form>
   </div>
   <a id="filters" data-toggle="modal" data-target="#myModal">Filters</a>
@@ -114,60 +119,74 @@
           <h4 class="modal-title" id="my_modal_label">Filter search results</h4>
         </div>
         <div class="modal-body">
-          <form>
-            <select name="Min Price">
-              <option>Min Price</option>
-              <option>$500+</option>
-              <option>$750+</option>
-              <option>$1000+</option>
-              <option>$1,250+</option>
-              <option>$1,500+</option>
-              <option>$1,500+</option>
-              <option>$1,750+</option>
-              <option>$2,000+</option>
-              <option>$2,500+</option>
-            </select>
-            <select name="Max Price">
-              <option>Max Price</option>
-              <option>$500+</option>
-              <option>$750+</option>
-              <option>$1000+</option>
-              <option>$1,250+</option>
-              <option>$1,500+</option>
-              <option>$1,500+</option>
-              <option>$1,750+</option>
-              <option>$2,000+</option>
-              <option>$2,500+</option>
-            </select>
-            <select name="Bathrooms">
-              <option>Bathrooms</option>
-              <option>0+</option>
-              <option>1+</option>
-              <option>1.5+</option>
-              <option>2+</option>
-              <option>3+</option>
-            </select>
-            <select name="Bedrooms">
-              <option>Bedrooms</option>
-              <option>0+</option>
-              <option>1+</option>
-              <option>2+</option>
-              <option>3+</option>
-              <option>4+</option>
-            </select>
-            <select name="lot size">
-              <option>Lot Size</option>
-              <option>2,000+ sqft</option>
-              <option>3,000+ sqft</option>
-              <option>4,000+ sqft</option>
-              <option>5,000+ sqft</option>
-              <option>7,500+ sqft</option>
-            </select>
-            <select name="Home type">
-             <option>Home type</option>
-              <option>House</option>
-              <option>Apartment</option>
-            </select>
+          <form class="modal-form">
+
+            <select name="Min Price" class="custom-select">
+                <option>Min Price</option>
+                <option>$500+</option>
+                <option>$750+</option>
+                <option>$1000+</option>
+                <option>$1,250+</option>
+                <option>$1,500+</option>
+                <option>$1,500+</option>
+                <option>$1,750+</option>
+                <option>$2,000+</option>
+                <option>$2,500+</option>
+              </select>
+            <span></span>
+
+            <select name="Max Price" class="custom-select">
+                <option>Max Price</option>
+                <option>$500+</option>
+                <option>$750+</option>
+                <option>$1000+</option>
+                <option>$1,250+</option>
+                <option>$1,500+</option>
+                <option>$1,500+</option>
+                <option>$1,750+</option>
+                <option>$2,000+</option>
+                <option>$2,500+</option>
+              </select>
+            <span></span>
+
+            <select name="Bathrooms" class="custom-select">
+                <option>Bathrooms</option>
+                <option>0+</option>
+                <option>1+</option>
+                <option>1.5+</option>
+                <option>2+</option>
+                <option>3+</option>
+              </select>
+            <span></span>
+
+            <select name="Bedrooms" class="custom-select">
+                <option>Bedrooms</option>
+                <option>0+</option>
+                <option>1+</option>
+                <option>2+</option>
+                <option>3+</option>
+                <option>4+</option>
+              </select>
+            <span></span>
+
+            <select name="lot size" class="custom-select">
+                <option>Lot Size</option>
+                <option>2,000+ sqft</option>
+                <option>3,000+ sqft</option>
+                <option>4,000+ sqft</option>
+                <option>5,000+ sqft</option>
+                <option>7,500+ sqft</option>
+              </select>
+            <span></span>
+
+            <select name="Home type" class="custom-select">
+                <option>Home type</option>
+                <option>House</option>
+                <option>Apartment</option>
+              </select>
+            <span></span>
+
+
             <!-- 
             list of checkboxes with neighborhoods from the city they selected. use angular to generate it.
             -->
@@ -180,7 +199,111 @@
       </div>
     </div>
   </div>
+  <div class="results">
+    <div class="results-header text-center">
+      <h2 class="h1">san diego, CA</h2>
+      <p class="h3"># homes for rent</p>
+    </div>
+    <div class="results-homes">
+      <div>
+        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
+        <p>Price/mo <span class="pull-right">Address</span></p>
+      </div>
+    </div>
+    <div class="results-homes">
+      <div>
+        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
+        <p>Price/mo <span class="pull-right">Address</span></p>
+      </div>
+    </div>
+    <div class="results-homes">
+      <div>
+        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
+        <p>Price/mo <span class="pull-right">Address</span></p>
+      </div>
+    </div>
+    <div class="results-homes">
+      <div>
+        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
+        <p>Price/mo <span class="pull-right">Address</span></p>
+      </div>
+    </div>
+    <div class="results-homes">
+      <div>
+        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
+        <p>Price/mo <span class="pull-right">Address</span></p>
+      </div>
+    </div>
+    <div class="results-homes">
+      <div>
+        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
+        <p>Price/mo <span class="pull-right">Address</span></p>
+      </div>
+    </div>
+    <div class="results-homes">
+      <div>
+        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
+        <p>Price/mo <span class="pull-right">Address</span></p>
+      </div>
+    </div>
+    <div class="results-homes">
+      <div>
+        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
+        <p>Price/mo <span class="pull-right">Address</span></p>
+      </div>
+    </div>
+    <div class="results-homes">
+      <div>
+        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
+        <p>Price/mo <span class="pull-right">Address</span></p>
+      </div>
+    </div>
+    <div class="results-homes">
+      <div>
+        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
+        <p>Price/mo <span class="pull-right">Address</span></p>
+      </div>
+    </div>
+    <div class="results-homes">
+      <div>
+        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
+        <p>Price/mo <span class="pull-right">Address</span></p>
+      </div>
+    </div>
+    <div class="results-homes">
+      <div>
+        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
+        <p>Price/mo <span class="pull-right">Address</span></p>
+      </div>
+    </div>
+    <div class="results-homes">
+      <div>
+        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
+        <p>Price/mo <span class="pull-right">Address</span></p>
+      </div>
+    </div>
+    <div class="results-homes">
+      <div>
+        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
+        <p>Price/mo <span class="pull-right">Address</span></p>
+      </div>
+    </div>
+    <div class="results-homes">
+      <div>
+        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
+        <p>Price/mo <span class="pull-right">Address</span></p>
+      </div>
+    </div>
+    <div class="results-homes">
+      <div>
+        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
+        <p>Price/mo <span class="pull-right">Address</span></p>
+      </div>
+    </div>
+  </div>
+  <div id="map">
 
+  </div>
   <script src="app.js"></script>
 </body>
 
