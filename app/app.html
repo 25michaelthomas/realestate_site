@@ -18,7 +18,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body ng-app="realEstateApp">
   <nav>
     <ul>
       <li class="my_navbar"><a href="../contact_page/contact.html">Buy</a></li>
@@ -199,105 +199,29 @@
       </div>
     </div>
   </div>
-  <div class="results">
+  <div class="results" ng-controller="MainController">
     <div class="results-header text-center">
       <h2 class="h1">san diego, CA</h2>
       <p class="h3"># homes for rent</p>
     </div>
-    <div class="results-homes">
-      <div>
-        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
-        <p>Price/mo <span class="pull-right">Address</span></p>
+    <div ng-repeat="home in getResults.homes">
+      <div class="results-homes" data-toggle="modal" data-target="#resultsModal">
+        <div>
+          <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
+          <p>Price/mo <span class="pull-right">Address</span></p>
+        </div>
       </div>
     </div>
-    <div class="results-homes">
-      <div>
-        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
-        <p>Price/mo <span class="pull-right">Address</span></p>
-      </div>
-    </div>
-    <div class="results-homes">
-      <div>
-        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
-        <p>Price/mo <span class="pull-right">Address</span></p>
-      </div>
-    </div>
-    <div class="results-homes">
-      <div>
-        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
-        <p>Price/mo <span class="pull-right">Address</span></p>
-      </div>
-    </div>
-    <div class="results-homes">
-      <div>
-        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
-        <p>Price/mo <span class="pull-right">Address</span></p>
-      </div>
-    </div>
-    <div class="results-homes">
-      <div>
-        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
-        <p>Price/mo <span class="pull-right">Address</span></p>
-      </div>
-    </div>
-    <div class="results-homes">
-      <div>
-        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
-        <p>Price/mo <span class="pull-right">Address</span></p>
-      </div>
-    </div>
-    <div class="results-homes">
-      <div>
-        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
-        <p>Price/mo <span class="pull-right">Address</span></p>
-      </div>
-    </div>
-    <div class="results-homes">
-      <div>
-        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
-        <p>Price/mo <span class="pull-right">Address</span></p>
-      </div>
-    </div>
-    <div class="results-homes">
-      <div>
-        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
-        <p>Price/mo <span class="pull-right">Address</span></p>
-      </div>
-    </div>
-    <div class="results-homes">
-      <div>
-        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
-        <p>Price/mo <span class="pull-right">Address</span></p>
-      </div>
-    </div>
-    <div class="results-homes">
-      <div>
-        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
-        <p>Price/mo <span class="pull-right">Address</span></p>
-      </div>
-    </div>
-    <div class="results-homes">
-      <div>
-        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
-        <p>Price/mo <span class="pull-right">Address</span></p>
-      </div>
-    </div>
-    <div class="results-homes">
-      <div>
-        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
-        <p>Price/mo <span class="pull-right">Address</span></p>
-      </div>
-    </div>
-    <div class="results-homes">
-      <div>
-        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
-        <p>Price/mo <span class="pull-right">Address</span></p>
-      </div>
-    </div>
-    <div class="results-homes">
-      <div>
-        <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
-        <p>Price/mo <span class="pull-right">Address</span></p>
+  </div>
+  <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog" aria-labelledby="my_modal_label">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="my_modal_label">Filter search results</h4>
+        </div>
+        <div class="modal-body">
+        </div>
       </div>
     </div>
   </div>
@@ -305,6 +229,8 @@
 
   </div>
   <script src="app.js"></script>
+  <script src="module.js"></script>
+  <script src="controller.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,71 @@
+{
+  "homes": [
+    {
+      "address": "133 Parker street",
+      "type": "apartment",
+      "beds": "2",
+      "baths": "4",
+      "price": "",
+      "city": "Miami",
+      "state": "FL",
+      "picture": "http://www.directcommercialfunding.com/images/apartment-building-loans.jpg",
+      "sqft": "2,000"
+  },
+    {
+      "address": "857 17th street",
+      "type": "apartment",
+      "beds": "3",
+      "baths": "2",
+      "price": "800",
+      "city": "Dallas",
+      "state": "TX",
+      "picture": "http://az616578.vo.msecnd.net/files/2016/07/26/636050962570138758-2091420308_Elegant-apartment-finder.jpg",
+      "sqft": "3,000"
+  },
+    {
+      "address": "3000 Melbourne place",
+      "type": "house",
+      "beds": "4",
+      "baths": "1.5",
+      "price": "250,000",
+      "city": "Seattle",
+      "state": "WA",
+      "picture": "https://s3.amazonaws.com/uscx-media/houses/hp2/slides/slide-1.jpg",
+      "sqft": "4,000"
+  },
+    {
+      "address": "384 Smith Terrace",
+      "type": "house",
+      "beds": "1",
+      "baths": "1",
+      "price": "150,000",
+      "city": "Boston",
+      "state": "MA",
+      "picture": "http://hookedonhouses.net/wp-content/uploads/2009/01/Father-of-the-Bride-Lookalike-house.jpg",
+      "sqft": "1,000"
+  },
+    {
+      "address": "452 underwood street",
+      "type": "apartment",
+      "beds": "1",
+      "baths": "2",
+      "price": "1,200",
+      "city": "Los Angeles",
+      "state": "CA",
+      "picture": "http://www.aptmags.com/wp-content/uploads/2015/12/Accommodation-1.jpg",
+      "sqft": "300"
+  },
+    {
+      "address": "100 falcon court",
+      "type": "apartment",
+      "beds": "2",
+      "baths": "3",
+      "price": "3,000",
+      "city": "New York",
+      "state": "NY",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Ormonde_Apartment_Building_Portland.JPG",
+      "sqft": "500"
+  }
+
+]
+};
