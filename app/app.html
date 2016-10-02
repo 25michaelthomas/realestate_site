@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" data-ng-app="realEstateApp">
 
 <head>
   <meta charset="utf-8" />
@@ -16,9 +16,10 @@
   <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">  </script>
     <![endif]-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 </head>
 
-<body ng-app="realEstateApp">
+<body>
   <nav>
     <ul>
       <li class="my_navbar"><a href="../contact_page/contact.html">Buy</a></li>
@@ -199,18 +200,17 @@
       </div>
     </div>
   </div>
-  <div class="results" ng-controller="MainController">
+  <div class="results">
     <div class="results-header text-center">
       <h2 class="h1">san diego, CA</h2>
       <p class="h3"># homes for rent</p>
     </div>
-    <div ng-repeat="home in getResults.homes">
-      <div class="results-homes" data-toggle="modal" data-target="#resultsModal">
-        <div>
-          <p>Type for rent <span class="pull-right"># bds/# ba/ #sqft</span></p>
-          <p>Price/mo <span class="pull-right">Address</span></p>
-        </div>
+    <div data-ng-controller="MainController">
+      <div data-ng-repeat="home in cities.homes">
+        <city></city>
       </div>
+
+
     </div>
   </div>
   <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog" aria-labelledby="my_modal_label">
@@ -231,6 +231,7 @@
   <script src="app.js"></script>
   <script src="module.js"></script>
   <script src="controller.js"></script>
+  <script src="services.js"></script>
 </body>
 
 </html>

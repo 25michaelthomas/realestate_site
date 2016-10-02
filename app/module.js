@@ -1,10 +1,7 @@
 var app = angular.module('realEstateApp', []);
-app.directive('city', function () {
+app.directive("city", function () {
   return {
     restrict: 'E',
-    scope: {
-      info: '='
-    },
-    templateUrl: 'results.html'
+    templateUrl: "results.html"
   };
 });

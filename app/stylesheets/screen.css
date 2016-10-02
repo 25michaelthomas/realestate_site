@@ -522,3 +522,7 @@ input[type="text"] {
     min-height: 300px;
   }
 }
+/* line 456, ../sass/screen.scss */
+city {
+  color: black;
+}

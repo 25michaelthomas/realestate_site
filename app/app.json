@@ -1,11 +1,12 @@
 {
+  "poop": "poopoo",
   "homes": [
     {
       "address": "133 Parker street",
       "type": "apartment",
       "beds": "2",
       "baths": "4",
-      "price": "",
+      "price": "2,000",
       "city": "Miami",
       "state": "FL",
       "picture": "http://www.directcommercialfunding.com/images/apartment-building-loans.jpg",
@@ -68,4 +69,4 @@
   }
 
 ]
-};
+}
