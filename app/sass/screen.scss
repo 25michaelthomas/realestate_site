@@ -174,6 +174,7 @@ input[type="text"] {
 }
 
 .custom-select {
+  text-align: center;
   min-width: 105px;
   height: 30px;
   display: inline-block;
@@ -238,9 +239,8 @@ input[type="text"] {
   height: auto;
   padding: 10px;
   font: 300 20px sans-serif;
-  &:after {
+  &> span {
     z-index: 1;
-    content: "";
     position: absolute;
     width: 100%;
     height: 100%;
@@ -250,7 +250,7 @@ input[type="text"] {
     background-position: 50% 50%;
     background-repeat: none;
     filter: brightness(75%);
-    background-image: url(http://www.welcometosandiego.com/wp-content/uploads/2010/02/C-Street-Vision.jpg);
+    background-color: aqua;
   }
   div {
     padding: 10px;
@@ -451,8 +451,4 @@ input[type="text"] {
   .results-homes {
     min-height: 300px;
   }
-}
-
-city {
-  color: black;
 }

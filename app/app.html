@@ -17,6 +17,12 @@
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">  </script>
     <![endif]-->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+
+
+
+  <META HTTP-EQUIV="Pragma" CONTENT="no-cache" />
+  <!-- REMOVE WHEN FINISHED FOR CACHING -->
 </head>
 
 <body>
@@ -94,8 +100,8 @@
               <option>3+</option>
               <option>4+</option>
             </select>
-      <select name="lot size" class="custom-select">
-              <option>Lot Size</option>
+      <select name="size" class="custom-select">
+              <option>Square feet</option>
               <option>2,000+ sqft</option>
               <option>3,000+ sqft</option>
               <option>4,000+ sqft</option>
@@ -200,17 +206,15 @@
       </div>
     </div>
   </div>
-  <div class="results">
+  <div class="results" data-ng-controller="MainController">
     <div class="results-header text-center">
       <h2 class="h1">san diego, CA</h2>
       <p class="h3"># homes for rent</p>
     </div>
-    <div data-ng-controller="MainController">
+    <div>
       <div data-ng-repeat="home in cities.homes">
         <city></city>
       </div>
-
-
     </div>
   </div>
   <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog" aria-labelledby="my_modal_label">
@@ -226,7 +230,9 @@
     </div>
   </div>
   <div id="map">
-
+    <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAT46XDg118SUugdEb0pfxFjE7bU3o0uK0
+    &q=Space+Needle,Seattle+WA" allowfullscreen>
+</iframe>
   </div>
   <script src="app.js"></script>
   <script src="module.js"></script>
