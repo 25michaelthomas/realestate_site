@@ -1,5 +1,5 @@
 {
-  "poop": "poopoo",
+
   "homes": [
     {
       "address": "133 Parker street",
@@ -10,7 +10,9 @@
       "city": "Miami",
       "state": "FL",
       "picture": "http://www.directcommercialfunding.com/images/apartment-building-loans.jpg",
-      "sqft": "2,000"
+      "sqft": "2,000",
+      "lat": "49.735495",
+      "long": "-73.910745"
   },
     {
       "address": "857 17th street",
@@ -21,7 +23,9 @@
       "city": "Dallas",
       "state": "TX",
       "picture": "http://i2.interiorim.com/uploads/original/201606/27/interiorim.com_future_light_Dream_house_lifestyle_11619.jpg",
-      "sqft": "3,000"
+      "sqft": "3,000",
+      "lat": "48.735496",
+      "long": "-73.910746"
   },
     {
       "address": "3000 Melbourne place",
@@ -32,7 +36,9 @@
       "city": "Seattle",
       "state": "WA",
       "picture": "https://s3.amazonaws.com/uscx-media/houses/hp2/slides/slide-1.jpg",
-      "sqft": "4,000"
+      "sqft": "4,000",
+      "lat": "46.735497",
+      "long": "-73.910747"
   },
     {
       "address": "384 Smith Terrace",
@@ -43,7 +49,9 @@
       "city": "Boston",
       "state": "MA",
       "picture": "http://hookedonhouses.net/wp-content/uploads/2009/01/Father-of-the-Bride-Lookalike-house.jpg",
-      "sqft": "1,000"
+      "sqft": "1,000",
+      "lat": "43.735498",
+      "long": "-73.910748"
   },
     {
       "address": "452 underwood street",
@@ -54,7 +62,9 @@
       "city": "Los Angeles",
       "state": "CA",
       "picture": "http://www.aptmags.com/wp-content/uploads/2015/12/Accommodation-1.jpg",
-      "sqft": "300"
+      "sqft": "300",
+      "lat": "40.735499",
+      "long": "-73.910749"
   },
     {
       "address": "100 falcon court",
@@ -65,7 +75,9 @@
       "city": "New York",
       "state": "NY",
       "picture": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Ormonde_Apartment_Building_Portland.JPG",
-      "sqft": "500"
+      "sqft": "500",
+      "lat": "41.735490",
+      "long": "-73.910740"
   }
 
 ]
