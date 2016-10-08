@@ -18,7 +18,7 @@ $(function () {
     dataType: 'json',
     success: function (data) {
       var minPrice = 0;
-      var maxPrice = 0;
+      var maxPrice = 10000000000;
       var bathrooms = 0;
       var bedrooms = 0;
       var squareFeet = 0;
@@ -47,7 +47,7 @@ $(function () {
               maxPrice = parseFloat(targetValue);
 
             } else {
-              maxPrice = 0;
+              maxPrice = 1000000000;
             }
 
             break;
@@ -98,6 +98,7 @@ $(function () {
 
 
       function initMap() {
+
         map = new google.maps.Map(document.getElementById('map'), {
           center: {
             lat: 45.397,
@@ -121,12 +122,14 @@ $(function () {
           };
 
 
-          if ((dataBaths >= bathrooms) && (dataBeds >= bedrooms) && (minPrice >= dataPrice <= maxPrice) && (dataSqft >= squareFeet)) {
+          if ((dataBaths >= bathrooms) && (dataBeds >= bedrooms) && (minPrice <= dataPrice) && (dataPrice <= maxPrice) && (dataSqft >= squareFeet)) {
             var marker = new google.maps.Marker({
               position: myLatLng,
               map: map,
               title: 'Hello World!'
             });
+            results.push(data.homes[i]);
+
           }
 
         }
@@ -136,9 +139,6 @@ $(function () {
 
     }
   });
-
-
-
-
-
 });
+var g = "gooppgle";
+var results = [];

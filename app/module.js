@@ -5,4 +5,3 @@ app.directive("city", function () {
     templateUrl: "results.html"
   };
 });
-var g = "google";
