@@ -8,3 +8,10 @@ app.factory('getResults', ['$http', function ($http) {
       return err;
     });
 }]);
+app.factory('applyFilters', ['$http', function ($http) {
+  return function (item) {
+
+
+  };
+
+}]);
