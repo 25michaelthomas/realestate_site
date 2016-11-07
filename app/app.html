@@ -60,7 +60,7 @@
     <form id="other-filters">
 
 
-      <select name="Min Price" class="custom-select" data-ng-model="v" data-ng-change="apply(v)">
+      <select name="Min Price" class="custom-select" data-ng-model="v" data-ng-change="apply()">
               <option>Min Price</option>
               <option>500+</option>
               <option>750+</option>
@@ -209,7 +209,7 @@
     </div>
     <div>
 
-      <div data-ng-repeat="home in results">
+      <div data-ng-repeat="home in results.homes">
         <city></city>
       </div>
     </div>
