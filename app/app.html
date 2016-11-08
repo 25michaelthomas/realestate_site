@@ -60,8 +60,8 @@
     <form id="other-filters">
 
 
-      <select name="Min Price" class="custom-select" data-ng-model="v" data-ng-change="apply()">
-              <option>Min Price</option>
+      <select name="Min Price" class="custom-select" data-ng-model="a" data-ng-change="change('Min Price', a);apply()">
+              <option data-ng-selected="1 === 1">Min Price</option>
               <option>500+</option>
               <option>750+</option>
               <option>1000+</option>
@@ -71,8 +71,8 @@
               <option>2000+</option>
               <option>2500+</option>
             </select>
-      <select name="Max Price" class="custom-select">
-              <option>Max Price</option>
+      <select name="Max Price" class="custom-select" data-ng-model="b" data-ng-change="change('Max Price', b);apply()">
+              <option data-ng-selected="1 === 1">Max Price</option>
               <option>500+</option>
               <option>750+</option>
               <option>1000+</option>
@@ -82,36 +82,35 @@
               <option>2000+</option>
               <option>2500+</option>
             </select>
-      <select name="Bathrooms" class="custom-select">
-              <option>Bathrooms</option>
+      <select name="Bathrooms" class="custom-select" data-ng-model="c" data-ng-change="change('Bathrooms', c);apply()">
+              <option data-ng-selected="1 === 1">Bathrooms</option>
               <option>0+</option>
               <option>1+</option>
               <option>1.5+</option>
               <option>2+</option>
               <option>3+</option>
             </select>
-      <select name="Bedrooms" class="custom-select">
-              <option>Bedrooms</option>
+      <select name="Bedrooms" class="custom-select" data-ng-model="d" data-ng-change="change('Bedrooms', d);apply()">
+              <option data-ng-selected="1 === 1">Bedrooms</option>
               <option>0+</option>
               <option>1+</option>
               <option>2+</option>
               <option>3+</option>
               <option>4+</option>
             </select>
-      <select name="Square feet" class="custom-select">
-              <option>Square feet</option>
+      <select name="Square feet" class="custom-select" data-ng-model="e" data-ng-change="change('Square feet', e);apply()">
+              <option data-ng-selected="1 === 1">Square feet</option>
               <option>2000+ sqft</option>
               <option>3000+ sqft</option>
               <option>4000+ sqft</option>
               <option>5000+ sqft</option>
               <option>7500+ sqft</option>
             </select>
-      <select name="Home type" class="custom-select">
-             <option>Home type</option>
+      <select name="Home type" class="custom-select" data-ng-model="f" data-ng-change="change('Home type', f);apply()">
+             <option data-ng-selected="1 === 1">Home type</option>
               <option>House</option>
               <option>Apartment</option>
             </select>
-
 
     </form>
   </div>
@@ -126,68 +125,68 @@
         <div class="modal-body">
           <form class="modal-form">
 
-            <select name="Min Price" class="custom-select">
-                <option>Min Price</option>
-                <option>$500+</option>
-                <option>$750+</option>
-                <option>$1,000+</option>
-                <option>$1,250+</option>
-                <option>$1,500+</option>
-                <option>$1,750+</option>
-                <option>$2,000+</option>
-                <option>$2,500+</option>
-              </select>
-            <span></span>
+            <select name="Min Price" class="custom-select" data-ng-model="a" data-ng-change="change('Min Price', a);apply()">
+              <option data-ng-selected="1 === 1">Min Price</option>
+              <option>500+</option>
+              <option>750+</option>
+              <option>1000+</option>
+              <option>1250+</option>
+              <option>1500+</option>
+              <option>1750+</option>
+              <option>2000+</option>
+              <option>2500+</option>
+            </select>
 
-            <select name="Max Price" class="custom-select">
-                <option>Max Price</option>
-                <option>$500+</option>
-                <option>$750+</option>
-                <option>$1,000+</option>
-                <option>$1,250+</option>
-                <option>$1,500+</option>
-                <option>$1,750+</option>
-                <option>$2,000+</option>
-                <option>$2,500+</option>
-              </select>
-            <span></span>
 
-            <select id="bathrooms" name="Bathrooms" class="custom-select">
-                <option>Bathrooms</option>
-                <option>0+</option>
-                <option>1+</option>
-                <option>1.5+</option>
-                <option>2+</option>
-                <option>3+</option>
-              </select>
-            <span></span>
+            <select name="Max Price" class="custom-select" data-ng-model="b" data-ng-change="change('Max Price', b);apply()">
+              <option data-ng-selected="1 === 1">Max Price</option>
+              <option>500+</option>
+              <option>750+</option>
+              <option>1000+</option>
+              <option>1250+</option>
+              <option>1500+</option>
+              <option>1750+</option>
+              <option>2000+</option>
+              <option>2500+</option>
+            </select>
 
-            <select name="Bedrooms" class="custom-select">
-                <option>Bedrooms</option>
-                <option>0+</option>
-                <option>1+</option>
-                <option>2+</option>
-                <option>3+</option>
-                <option>4+</option>
-              </select>
-            <span></span>
 
-            <select name="Square feet" class="custom-select">
-                <option>Square feet</option>
-                <option>2,000+ sqft</option>
-                <option>3,000+ sqft</option>
-                <option>4,000+ sqft</option>
-                <option>5,000+ sqft</option>
-                <option>7,500+ sqft</option>
-              </select>
-            <span></span>
+            <select name="Bathrooms" class="custom-select" data-ng-model="c" data-ng-change="change('Bathrooms', c);apply()">
+              <option data-ng-selected="1 === 1">Bathrooms</option>
+              <option>0+</option>
+              <option>1+</option>
+              <option>1.5+</option>
+              <option>2+</option>
+              <option>3+</option>
+            </select>
 
-            <select name="Home type" class="custom-select">
-                <option>Home type</option>
-                <option>House</option>
-                <option>Apartment</option>
-              </select>
-            <span></span>
+
+            <select name="Bedrooms" class="custom-select" data-ng-model="d" data-ng-change="change('Bedrooms', d);apply()">
+              <option data-ng-selected="1 === 1">Bedrooms</option>
+              <option>0+</option>
+              <option>1+</option>
+              <option>2+</option>
+              <option>3+</option>
+              <option>4+</option>
+            </select>
+
+
+            <select name="Square feet" class="custom-select" data-ng-model="e" data-ng-change="change('Square feet', e);apply()">
+              <option data-ng-selected="1 === 1">Square feet</option>
+              <option>2000+ sqft</option>
+              <option>3000+ sqft</option>
+              <option>4000+ sqft</option>
+              <option>5000+ sqft</option>
+              <option>7500+ sqft</option>
+            </select>
+
+
+            <select name="Home type" class="custom-select" data-ng-model="f" data-ng-change="change('Home type', f);apply()">
+             <option data-ng-selected="1 === 1">Home type</option>
+              <option>House</option>
+              <option>Apartment</option>
+            </select>
+
 
 
             <!-- 
