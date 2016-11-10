@@ -4,4 +4,5 @@ app.controller('MainController', ['$scope', "applyFilters", "getResults", functi
   $scope.apply();
   $scope.results = applyFilters.results;
   $scope.change = applyFilters.change;
+
 }]);

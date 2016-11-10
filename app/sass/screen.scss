@@ -213,12 +213,17 @@ input[type="text"] {
   overflow: scroll;
 }
 
-#map {
+#map_cont {
   left: 60%;
   width: 40%;
   height: 83.8vh;
   background-color: #f7f7f7;
   position: fixed;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
 }
 
 .results-header {
@@ -287,7 +292,7 @@ input[type="text"] {
     width: 48%;
     float: left;
   }
-  #map {
+  #map_cont {
     display: none;
   }
   #other-filters {
@@ -434,7 +439,7 @@ input[type="text"] {
   .results {
     height: 88.5vh;
   }
-  #map {
+  #map_cont {
     height: 88.5vh;
   }
 }
