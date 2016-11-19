@@ -141,7 +141,7 @@ app.factory('applyFilters', ['getResults', function (getResults) {
               });
               var newWindow = infowindow[i];
 
-              var modal = document.getElementById("#resultsModal");
+
               marker[i].addListener('mouseover', function () {
 
                 newWindow.open(map, this);
@@ -150,6 +150,10 @@ app.factory('applyFilters', ['getResults', function (getResults) {
               marker[i].addListener('mouseout', function () {
 
                 newWindow.close();
+              });
+              marker[i].addListener('click', function () {
+                $("#resultsModal").modal("show");
+
               });
 
 
