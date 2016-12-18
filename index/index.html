@@ -1,194 +1,184 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<nav class="nav">
+  <ul>
+    <li class="my_navbar"><a href="#buy">Buy</a></li>
+    <li class="my_navbar"><a>Sell</a></li>
+    <li class="my_navbar" id="logo"><a href="#home">RESI</a></li>
+    <li class="my_navbar"><a href="#rent">Rent</a></li>
+    <li class="my_navbar"><a href="#hotels">Hotels</a></li>
+  </ul>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title> Resi</title>
-
-  <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="stylesheets/screen.css" type="text/css" media="screen">
-  <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">  </script>
-    <![endif]-->
-</head>
-
-<body>
-  <nav>
-    <ul>
-      <li class="my_navbar"><a href="">Buy</a></li>
-      <li class="my_navbar"><a href="">Sell</a></li>
-      <li class="my_navbar" id="logo"><a href="#">RESI</a></li>
-      <li class="my_navbar"><a href="../app/app.html">Rent</a></li>
-      <li class="my_navbar"><a href="">Hotels</a></li>
-    </ul>
-
-    <button type="button" id="nav-button">
+  <button type="button" id="nav-button" data-ng-click="rotate()" data-ng-class="rotate: rotation === 1 ; reverse-rotate: rotation === 2">
         <span class="lines"></span>
         <span class="lines"></span>
         <span class="lines"></span>
     </button>
 
-    <ul id="menu">
-      <li><a href="../contact_page/contact.html">Buy</a></li>
-      <li><a href="portfolio.html">Sell</a></li>
-      <li><a href="#">RESI</a></li>
-      <li><a href="../app/app.html">Rent</a></li>
-      <li><a href="../about_page/about.html">Hotels</a></li>
-    </ul>
-  </nav>
-  <div class="bg">
-    <div class="text-center" id="search">
-      <input type="text" placeholder="Search for an apartment">
-      <input type="button" value="Search">
-    </div>
+  <ul id="menu">
+    <li><a href="../contact_page/contact.html">Buy</a></li>
+    <li><a>Sell</a></li>
 
-    <ul class="cb-slideshow">
-      <li>
-        <span>Image 01</span>
-      </li>
+    <li><a href="../app/app.html">Rent</a></li>
+    <li><a href="../about_page/about.html">Hotels</a></li>
+  </ul>
+</nav>
+<div class="bg">
 
-      <li>
-        <span>Image 02</span>
-      </li>
-      <li>
-        <span>Image 03</span>
-      </li>
-      <li>
-        <span>Image 04</span>
-      </li>
-
-      <li>
-        <span>Image 05</span>
-      </li>
-      <li>
-        <span>Image 06</span>
-        <div>
-          <h3>Resi. Find your next home.</h3>
-        </div>
-      </li>
-    </ul>
+  <div class="text-center" id="search">
+    <input type="text" placeholder="Search for an apartment" data-ng-model="search" id="search-bar" data-ng-keyup="liveSearch()" data-ng-focus="focus = 1">
+    <a data-ng-click="pickCity(city.city[0]); searchBarClick()" href="#rent" id="search-button">Search</a>
   </div>
-  <div class="container">
+  <div id="search-container" data-ng-show="focus">
     <div class="row">
-      <div class="col-sm-12 col-md-12 ">
+      <div data-ng-repeat="x in city.city">
+        <a href="#rent" data-ng-click="pickCity(x); searchBarClick()">
+          <div class="col-sm-6 well">
+            <div class="col-md-3"><img class="img-responsive" src="" /></div>
+            <div class="col-md-7">
+              <h5>{{x.key}} Number of homes: {{x.val.length}}</h5>
 
-        <div class="row">
-
-          <div class="col-xs-12 text-center">
-            <h2 class="divider">Move somewhere far away</h2>
-            <h2><small>Or discover somewhere close to home.</small></h2>
-          </div>
-
-          <div class="col-xs-12 col-sm-12 col-md-4 div">
-            <div class="background" id="san_diego">
-              <p class="cities">San Diego</p>
             </div>
           </div>
-
-          <div class="col-xs-12 col-sm-6 col-md-4 div">
-            <div class="background" id="dallas">
-              <p class="cities">Dallas</p>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-4 div">
-            <div class="background" id="boston">
-              <p class="cities">Boston</p>
-            </div>
-          </div>
-
-          <div class="col-xs-12 text-center">
-            <h2 class="divider">Just stay the night</h2>
-            <h2><small>Resi can help you find hotels in these awesome cities.</small></h2>
-          </div>
-
-          <div class="col-xs-12 col-sm-12 col-md-8 div">
-            <div class="background" id="new_york">
-              <p class="cities">New York</p>
-            </div>
-          </div>
-
-          <div class="col-xs-12 col-sm-6 col-md-4 div">
-            <div class="background" id="philadelphia">
-              <p class="cities">Philadelphia</p>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-4 div">
-            <div class="background" id="atlanta">
-              <p class="cities">Atlanta</p>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-4 div">
-            <div class="background" id="chicago">
-              <p class="cities">Chicago</p>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-4 div">
-            <div class="background" id="seattle">
-              <p class="cities">Seattle</p>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-4 div">
-            <div class="background" id="baltimore">
-              <p class="cities">Baltimore</p>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-8 div">
-            <div class="background" id="los_angeles">
-              <p class="cities">Los Angeles</p>
-            </div>
-          </div>
-
-          <div class="col-xs-12 text-center">
-            <h2 class="divider">Finding a home just got easier</h2>
-            <h2><small>Just click on one of these cities or type one into the search bar.</small></h2>
-          </div>
-
-          <div class="col-xs-12 col-sm-12 col-md-4 div">
-            <div class="background" id="san_francisco">
-              <p class="cities">San Francisco</p>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-4 div">
-            <div class="background" id="miami">
-              <p class="cities">Miami</p>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-4 div">
-            <div class="background" id="new_orleans">
-              <p class="cities">New Orleans</p>
-            </div>
-          </div>
-
-        </div>
-
-
+        </a>
       </div>
     </div>
   </div>
-  <footer>
-    <div class="container-fluid" id="footer">
+  <ul class="cb-slideshow">
+    <li>
+      <span>Image 01</span>
+    </li>
+
+    <li>
+      <span>Image 02</span>
+    </li>
+    <li>
+      <span>Image 03</span>
+    </li>
+    <li>
+      <span>Image 04</span>
+    </li>
+
+    <li>
+      <span>Image 05</span>
+    </li>
+    <li>
+      <span>Image 06</span>
+      <div>
+        <h3>Resi. Find your next home.</h3>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="container" data-ng-click="focus=0">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 ">
+
       <div class="row">
+
         <div class="col-xs-12 text-center">
-          <nav id="footer">
-            <ul>
-              <li class="footer_nav"><a href="../contact_page/contact.html">Buy</a></li>
-              <li class="footer_nav"><a href="portfolio.html">Sell</a></li>
-              <li class="footer_nav" id="logo"><a href="#">RESI</a></li>
-              <li class="footer_nav"><a href="../resume_page/resume.html">Rent</a></li>
-              <li class="footer_nav"><a href="../about_page/about.html">Hotels</a></li>
-            </ul>
-          </nav>
+          <h2 class="divider">Move somewhere far away</h2>
+          <h2><small>Or discover somewhere close to home.</small></h2>
         </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-4 div">
+          <div class="background" id="san_diego">
+            <p class="cities">San Diego</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4 div">
+          <div class="background" id="dallas">
+            <p class="cities">Dallas</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 div">
+          <div class="background" id="boston">
+            <p class="cities">Boston</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 text-center">
+          <h2 class="divider">Just stay the night</h2>
+          <h2><small>Resi can help you find hotels in these awesome cities.</small></h2>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-8 div">
+          <div class="background" id="new_york">
+            <p class="cities">New York</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4 div">
+          <div class="background" id="philadelphia">
+            <p class="cities">Philadelphia</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 div">
+          <div class="background" id="atlanta">
+            <p class="cities">Atlanta</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 div">
+          <div class="background" id="chicago">
+            <p class="cities">Chicago</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 div">
+          <div class="background" id="seattle">
+            <p class="cities">Seattle</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 div">
+          <div class="background" id="baltimore">
+            <p class="cities">Baltimore</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-8 div">
+          <div class="background" id="los_angeles">
+            <p class="cities">Los Angeles</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 text-center">
+          <h2 class="divider">Finding a home just got easier</h2>
+          <h2><small>Just click on one of these cities or type one into the search bar.</small></h2>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-4 div">
+          <div class="background" id="san_francisco">
+            <p class="cities">San Francisco</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 div">
+          <div class="background" id="miami">
+            <p class="cities">Miami</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 div">
+          <div class="background" id="new_orleans">
+            <p class="cities">New Orleans</p>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="container-fluid" id="footer">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <nav id="footer">
+          <ul>
+            <li class="footer_nav"><a href="#buy">Buy</a></li>
+            <li class="footer_nav"><a href="#sell">Sell</a></li>
+            <li class="footer_nav" id="logo"><a href="#home">RESI</a></li>
+            <li class="footer_nav"><a href="#rent">Rent</a></li>
+            <li class="footer_nav"><a href="#hotels">Hotels</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
-  </footer>
-  <script src="index.js"></script>
-</body>
-
-</html>
+  </div>
+</footer>

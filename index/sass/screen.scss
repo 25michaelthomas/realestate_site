@@ -36,17 +36,32 @@ input[type=text] {
   padding-left: 10px;
 }
 
-input[type=button],
-input[type=button]:hover {
+#search-button,
+#search-button:hover {
   background-color: #FF7A5A;
   color: white;
   cursor: pointer;
-  height: 40px;
+  padding: 10px 30px 10px;
   border: hidden;
   width: 120px;
   font-size: 16px;
   margin-top: 5px;
   border-radius: 10px;
+  text-decoration: none;
+}
+
+#search-container {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%);
+  color: white;
+  z-index: 2;
+  width: 70%;
+  max-width: 700px;
+  border: none;
+  max-height: 320px;
+  overflow: scroll;
 }
 
 .cb-slideshow,
@@ -344,87 +359,14 @@ nav {
   }
 }
 
-#dallas {
-  @extend #san_diego;
-  &:before {
-    background-image: url(https://www.chcp.edu/sites/default/files/content/CHCP-Dallas-Campus.jpg);
-  }
-}
-
-#boston {
-  @extend #san_diego;
-  &:before {
-    background-image: url(http://wallpaperbeta.com/wallpaper_3840x2160/boston_street_bicycle_city_ultra_3840x2160_hd-wallpaper-302534.jpg);
-  }
-}
-
-#new_york {
-  @extend #san_diego;
-  &:before {
-    background-image: url(http://www.themebin.com/wp-content/uploads/hd-wallpapers/1920x1200/New_York_Time_Square_by_HairJay.jpg);
-  }
-}
-
-#philadelphia {
-  @extend #san_diego;
-  &:before {
-    background-image: url(https://www.bestwallpapers-hd.com/web/wallpapers/heart-of-philadelphia/1920x1080.jpg);
-  }
-}
-
-#atlanta {
-  @extend #san_diego;
-  &:before {
-    background-image: url(http://thenmf.org/wp-content/uploads/2015/05/Prince-of-Wales-Monument-2-960x680.jpg);
-  }
-}
-
-#chicago {
-  @extend #san_diego;
-  &:before {
-    background-image: url(http://5mpx.com/get/index.php?img=_thumb_post/Bahai-Temple-Chicago-5mpx-com-5mpx.com.jpg);
-  }
-}
-
-#seattle {
-  @extend #san_diego;
-  &:before {
-    background-image: url(http://hdwallpaperpics.org/wp-content/uploads/2015/06/Seattle-Wallpaper-10.jpg);
-  }
-}
-
-#baltimore {
-  @extend #san_diego;
-  &:before {
-    background-image: url(http://www.detoxmenow.org/wp-content/uploads/2014/07/Baltimore_Inner_Harbor_Maryland.jpg);
-  }
-}
-
-#los_angeles {
-  @extend #san_diego;
-  &:before {
-    background-image: url(https://newevolutiondesigns.com/images/freebies/los-angeles-santa-monica.jpg);
-  }
-}
-
-#san_francisco {
-  @extend #san_diego;
-  &:before {
-    background-image: url(http://static1.squarespace.com/static/547f29bfe4b0dc192ed7bdac/54aeb15ce4b018c14f34c7cb/54aeb160e4b018c14f34c7ed/1420734817363/san-franc.jpg?format=2500w);
-  }
-}
-
-#miami {
-  @extend #san_diego;
-  &:before {
-    background-image: url(http://noellegoveia.com/wp-content/uploads/2013/08/ST-PATRICK-CHURCH-MIAMI-BEACH-BOTANICAL-GARDENS-WEDDING-NOELLE-GOVEIA-PHOTOGRAPHY-12.jpg);
-  }
-}
-
-#new_orleans {
-  @extend #san_diego;
-  &:before {
-    background-image: url(http://www.pompo.com/wp-content/uploads/2011/02/IMG_4129horiz.jpg);
+$cities: ("dallas": url(https://www.chcp.edu/sites/default/files/content/CHCP-Dallas-Campus.jpg), "boston": url(http://wallpaperbeta.com/wallpaper_3840x2160/boston_street_bicycle_city_ultra_3840x2160_hd-wallpaper-302534.jpg), "new_york": url(http://www.themebin.com/wp-content/uploads/hd-wallpapers/1920x1200/New_York_Time_Square_by_HairJay.jpg), "philadelphia": url(https://www.bestwallpapers-hd.com/web/wallpapers/heart-of-philadelphia/1920x1080.jpg), "atlanta": url(http://thenmf.org/wp-content/uploads/2015/05/Prince-of-Wales-Monument-2-960x680.jpg), "chicago": url(http://5mpx.com/get/index.php?img=_thumb_post/Bahai-Temple-Chicago-5mpx-com-5mpx.com.jpg), "seattle": url(http://hdwallpaperpics.org/wp-content/uploads/2015/06/Seattle-Wallpaper-10.jpg), "baltimore": url(http://www.detoxmenow.org/wp-content/uploads/2014/07/Baltimore_Inner_Harbor_Maryland.jpg), "los_angeles": url(https://newevolutiondesigns.com/images/freebies/los-angeles-santa-monica.jpg), "san_francisco": url(http://static1.squarespace.com/static/547f29bfe4b0dc192ed7bdac/54aeb15ce4b018c14f34c7cb/54aeb160e4b018c14f34c7ed/1420734817363/san-franc.jpg?format=2500w), "miami": url(http://noellegoveia.com/wp-content/uploads/2013/08/ST-PATRICK-CHURCH-MIAMI-BEACH-BOTANICAL-GARDENS-WEDDING-NOELLE-GOVEIA-PHOTOGRAPHY-12.jpg), "new_orleans": url(http://www.pompo.com/wp-content/uploads/2011/02/IMG_4129horiz.jpg));
+@each $city,
+$img in $cities {
+  ##{$city} {
+    @extend #san_diego;
+    &:before {
+      background-image: $img;
+    }
   }
 }
 
@@ -444,8 +386,7 @@ footer {
     input[type=text] {
       width: 60%;
     }
-    input[type=button],
-    input[type=button]:hover {
+    a {
       width: 90px;
     }
   }

@@ -7,240 +7,44 @@
   <title> Resi</title>
 
   <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+  <style>
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak {
+      display: none !important;
+    }
 
+  </style>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="stylesheets/screen.css" type="text/css" media="screen">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcABunm1stXmm-EaCTJGwdkM_d6sRo0rk&callback=initMap" async defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
   <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">  </script>
     <![endif]-->
-
-
-
-
-
   <META HTTP-EQUIV="Pragma" CONTENT="no-cache" />
   <!-- REMOVE WHEN FINISHED FOR CACHING -->
 </head>
 
-<body data-ng-controller="MainController">
-  <nav>
-    <ul>
-      <li class="my_navbar"><a href="#">Buy</a></li>
-      <li class="my_navbar"><a href="#">Sell</a></li>
-      <li class="my_navbar" id="logo"><a href="../index/index.html">RESI</a></li>
-      <li class="my_navbar"><a href="#">Rent</a></li>
-      <li class="my_navbar"><a href="#">Hotels</a></li>
-    </ul>
+<body data-ng-controller="MainController" data-ng-cloak>
 
-    <button type="button" id="nav-button">
-        <span class="lines"></span>
-        <span class="lines"></span>
-        <span class="lines"></span>
-    </button>
+  <div data-ng-view data-ng-cloak>
 
-    <ul id="menu">
-      <li><a href="#">Buy</a></li>
-      <li><a href="#">Sell</a></li>
-      <li><a href="#">Rent</a></li>
-      <li><a href="#">Hotels</a></li>
-    </ul>
-  </nav>
-
-  <div id="search">
-    <input type="text" placeholder="Enter a city">
-    <div>
-      <span class="glyphicon glyphicon-search"></span>
-    </div>
-    <div id="placeholder">
-      <p></p>
-    </div>
-    <form id="other-filters">
-
-
-      <select name="Min Price" class="custom-select" data-ng-model="a" data-ng-change="change('Min Price', a);apply()">
-              <option data-ng-selected="1 === 1">Min Price</option>
-              <option>500+</option>
-              <option>750+</option>
-              <option>1000+</option>
-              <option>1250+</option>
-              <option>1500+</option>
-              <option>1750+</option>
-              <option>2000+</option>
-              <option>2500+</option>
-            </select>
-      <select name="Max Price" class="custom-select" data-ng-model="b" data-ng-change="change('Max Price', b);apply()">
-              <option data-ng-selected="1 === 1">Max Price</option>
-              <option>500+</option>
-              <option>750+</option>
-              <option>1000+</option>
-              <option>1250+</option>
-              <option>1500+</option>
-              <option>1750+</option>
-              <option>2000+</option>
-              <option>2500+</option>
-            </select>
-      <select name="Bathrooms" class="custom-select" data-ng-model="c" data-ng-change="change('Bathrooms', c);apply()">
-              <option data-ng-selected="1 === 1">Bathrooms</option>
-              <option>0+</option>
-              <option>1+</option>
-              <option>1.5+</option>
-              <option>2+</option>
-              <option>3+</option>
-            </select>
-      <select name="Bedrooms" class="custom-select" data-ng-model="d" data-ng-change="change('Bedrooms', d);apply()">
-              <option data-ng-selected="1 === 1">Bedrooms</option>
-              <option>0+</option>
-              <option>1+</option>
-              <option>2+</option>
-              <option>3+</option>
-              <option>4+</option>
-            </select>
-      <select name="Square feet" class="custom-select" data-ng-model="e" data-ng-change="change('Square feet', e);apply()">
-              <option data-ng-selected="1 === 1">Square feet</option>
-              <option>2000+ sqft</option>
-              <option>3000+ sqft</option>
-              <option>4000+ sqft</option>
-              <option>5000+ sqft</option>
-              <option>7500+ sqft</option>
-            </select>
-      <select name="Home type" class="custom-select" data-ng-model="f" data-ng-change="change('Home type', f);apply()">
-             <option data-ng-selected="1 === 1">Home type</option>
-              <option>House</option>
-              <option>Apartment</option>
-            </select>
-
-    </form>
-  </div>
-  <a id="filters" data-toggle="modal" data-target="#myModal">Filters</a>
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="my_modal_label">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="my_modal_label">Filter search results</h4>
-        </div>
-        <div class="modal-body">
-          <form class="modal-form">
-
-            <select name="Min Price" class="custom-select" data-ng-model="a" data-ng-change="change('Min Price', a);apply()">
-              <option data-ng-selected="1 === 1">Min Price</option>
-              <option>500+</option>
-              <option>750+</option>
-              <option>1000+</option>
-              <option>1250+</option>
-              <option>1500+</option>
-              <option>1750+</option>
-              <option>2000+</option>
-              <option>2500+</option>
-            </select>
-
-
-            <select name="Max Price" class="custom-select" data-ng-model="b" data-ng-change="change('Max Price', b);apply()">
-              <option data-ng-selected="1 === 1">Max Price</option>
-              <option>500+</option>
-              <option>750+</option>
-              <option>1000+</option>
-              <option>1250+</option>
-              <option>1500+</option>
-              <option>1750+</option>
-              <option>2000+</option>
-              <option>2500+</option>
-            </select>
-
-
-            <select name="Bathrooms" class="custom-select" data-ng-model="c" data-ng-change="change('Bathrooms', c);apply()">
-              <option data-ng-selected="1 === 1">Bathrooms</option>
-              <option>0+</option>
-              <option>1+</option>
-              <option>1.5+</option>
-              <option>2+</option>
-              <option>3+</option>
-            </select>
-
-
-            <select name="Bedrooms" class="custom-select" data-ng-model="d" data-ng-change="change('Bedrooms', d);apply()">
-              <option data-ng-selected="1 === 1">Bedrooms</option>
-              <option>0+</option>
-              <option>1+</option>
-              <option>2+</option>
-              <option>3+</option>
-              <option>4+</option>
-            </select>
-
-
-            <select name="Square feet" class="custom-select" data-ng-model="e" data-ng-change="change('Square feet', e);apply()">
-              <option data-ng-selected="1 === 1">Square feet</option>
-              <option>2000+ sqft</option>
-              <option>3000+ sqft</option>
-              <option>4000+ sqft</option>
-              <option>5000+ sqft</option>
-              <option>7500+ sqft</option>
-            </select>
-
-
-            <select name="Home type" class="custom-select" data-ng-model="f" data-ng-change="change('Home type', f);apply()">
-             <option data-ng-selected="1 === 1">Home type</option>
-              <option>House</option>
-              <option>Apartment</option>
-            </select>
-
-
-
-            <!-- 
-            list of checkboxes with neighborhoods from the city they selected. use angular to generate it.
-            -->
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="results">
-    <div class="results-header text-center">
-      <h2 class="h1">San Diego, CA</h2>
-      <p class="h3">{{results.homes.length}} homes for rent </p>
-    </div>
-    <div>
-
-      <div data-ng-repeat="home in results.homes">
-        <city></city>
-      </div>
-    </div>
-  </div>
-  <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog" aria-labelledby="my_modal_label">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="my_modal_label">This home's profile</h4>
-        </div>
-        <div class="modal-body">
-          beds: {{place.beds}}
-        </div>
-      </div>
-    </div>
   </div>
 
-  <div id="map_cont">
-    <div id="map" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen>
-    </div>
-  </div>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcABunm1stXmm-EaCTJGwdkM_d6sRo0rk&callback=initMap" async defer></script>
-  <script src="app.js"></script>
+
+
   <script src="module.js"></script>
   <script src="services.js"></script>
   <script src="controller.js"></script>
-
-
-
+  <script src="app.js"></script>
 
 </body>
 
