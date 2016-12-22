@@ -36,6 +36,8 @@ app.directive('head', ['$rootScope', '$compile', "applyFilters",
     };
     }
 ]);
+
+
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
 

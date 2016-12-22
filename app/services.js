@@ -20,6 +20,9 @@ app.factory('applyFilters', ['getResults', function (getResults) {
     searchWords: "",
     searchedCity: {
       key: "No results found"
+    },
+    currentHome: {
+      currentHome: {}
     }
   };
   return {
@@ -94,6 +97,7 @@ app.factory('applyFilters', ['getResults', function (getResults) {
 
       for (var i = 0; i < homes.length; i++) {
         (function () {
+
           if (i === 0) {
             var cityLat = 0;
             var cityLong = 0;
@@ -111,6 +115,7 @@ app.factory('applyFilters', ['getResults', function (getResults) {
               },
               zoom: 7
             });
+
           }
 
           var marker = [];
@@ -134,20 +139,23 @@ app.factory('applyFilters', ['getResults', function (getResults) {
               map: map,
               title: homes[i].address
             });
+
             results.homes.push(homes[i]);
             infowindow[i] = new google.maps.InfoWindow({
-              content: '<div id="content">' +
-                '<div id="siteNotice">' +
+              content: '<div class=" info-window container-fluid">' + '<div class="row">' +
+                '<div class="col-xs-6">' +
+                '<img src="' + homes[i].picture + '"/>' +
                 '</div>' +
-                '<h1 id="firstHeading" class="firstHeading">Uluru</h1>' + homes[i].price +
-                '<div id="bodyContent">' + '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-                'https://en.wikipedia.org/w/index.php?title=Uluru</a> ' +
-                '(last visited June 22, 2009).</p>' +
+                '<div class="col-xs-6">' + '<p>' + '<span>' + '$' + homes[i].price + '</span>' + '<br />' + homes[i].beds + ' bd, ' + homes[i].baths + ' ba' + '<br />' +
+                homes[i].sqft + ' sqft' +
+                '</p>' +
+                '</div >' +
                 '</div>' +
                 '</div>',
-              maxWidth: 100,
+              maxWidth: 150,
               position: myLatLng
             });
+            var thisHome = homes[i];
             var newWindow = infowindow[i];
             marker[i].addListener('mouseover', function () {
               newWindow.open(map, this);
@@ -156,7 +164,12 @@ app.factory('applyFilters', ['getResults', function (getResults) {
               newWindow.close();
             });
             marker[i].addListener('click', function () {
+
               $("#resultsModal").modal("show");
+              results.currentHome = {
+                currentHome: thisHome
+              };
+
             });
 
           }
@@ -168,23 +181,9 @@ app.factory('applyFilters', ['getResults', function (getResults) {
       results.searchWords = $("#search-bar").val();
     },
     searchedCity: function (x) {
-      if (1) {
-        results.searchedCity = x;
-      }
-    },
-    rotate: function () {
-      var nav_button = $("#nav-button");
-      var menu = $("#menu");
-      if ($scope.rotation === 2) {
-        nav_button.removeClass("rotate").addClass("reverse-rotate");
-        menu.slideToggle();
-        var i = nav_button.attr("class");
-        $scope.rotation = 1;
-      } else {
-        nav_button.removeClass("reverse-rotate").addClass("rotate");
-        $scope.rotation = 2;
-        menu.slideToggle();
-      }
+
+      results.searchedCity = x;
+
     }
   }
 }]);

@@ -1,4 +1,4 @@
-<div>
+<div data-ng-click="focus = 0">
   <nav>
     <ul>
       <li class="my_navbar"><a href="#buy">Buy</a></li>
@@ -23,19 +23,16 @@
   </nav>
 
   <div id="search">
-    <input type="text" id="search-bar" placeholder="Enter a city" data-ng-model="search" data-ng-keyup="liveSearch(); focus = 1">
     <div>
+      <input type="text" id="search-bar" placeholder="Enter a city" data-ng-model="search" data-ng-keyup="liveSearch(); focus = 1">
+
       <span class="glyphicon glyphicon-search"></span>
       <div id="search-container" data-ng-show="focus">
         <div class="row">
           <div data-ng-repeat="x in city.city">
             <a href="#" data-ng-click="pickCity(x); searchBarClick(); apply(searchedCity.val)">
-              <div class="col-sm-6 well">
-                <div class="col-md-3"><img class="img-responsive" src="" /></div>
-                <div class="col-md-7">
-                  <h5>{{x.key}} Number of homes: {{x.val.length}}</h5>
-
-                </div>
+              <div class="col-xs-12 well text-center">
+                <p>{{x.key}}</p>
               </div>
             </a>
           </div>
@@ -182,8 +179,8 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
         </div>
       </div>
     </div>
@@ -191,7 +188,7 @@
   <div class="results">
     <div class="results-header text-center">
       <h2 class="h1">{{searchedCity.key}}</h2>
-      <p class="h3" data-ng-click="apply(searchedCity.val)">{{searchedCity.val.length}} for rent </p>
+      <p class="h3" data-ng-click="apply(searchedCity.val)">{{results.homes.length}} for rent </p>
     </div>
     <div>
 
@@ -199,17 +196,119 @@
         <city></city>
       </div>
     </div>
-
   </div>
+
   <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog" aria-labelledby="my_modal_label">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="my_modal_label">This home's profile</h4>
+          <h2 class="modal-title" id="my_modal_label">This home's profile</h2>
         </div>
         <div class="modal-body">
-          beds: {{place.beds}}
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img src="{{results.currentHome.currentHome.picture}}" alt="Outside of the building">
+
+              </div>
+              <div class="item ">
+                <img src="http://arlingtonhomeinteriors.com/wp-content/uploads/2015/06/AHI-slider2-Living-Room-2.jpg" alt="Random room">
+
+              </div>
+              <div class="item">
+                <img src="http://static1.mysiteserver.net/w/936/h/500/sm/2/p/Images/LuxeHomeInteriors/site/febSlides/6010_1285_V2_0412.jpgx" alt="Random room">
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-8">
+                <h3>{{results.currentHome.currentHome.address}}</h3>
+              </div>
+              <div class="col-xs-4 text-center">
+                <h4 class="h3">{{results.currentHome.currentHome.type}} for rent <br /><span>${{results.currentHome.currentHome.price}}</span></h4>
+                <!--Add calculator on sale page for mortgage and calendar/calculator on hotel page-->
+              </div>
+              <div class="col-xs-12">
+                <ul class="home-facts">
+                  <li>{{results.currentHome.currentHome.beds}} Beds</li>
+                  <li>{{results.currentHome.currentHome.baths}} Baths</li>
+                  <li>{{results.currentHome.currentHome.sqft}} Sqft</li>
+                </ul>
+              </div>
+              <div class="col-xs-12">
+                <p>Can the forbidden intellect decide behind the alcohol? A controller applies a reflecting firework. A humble graduate refrains. Your booked insult pains his library above the provocative change. A transient dot storms outside the midnight. Can the forbidden intellect decide behind the alcohol? A controller applies a reflecting firework. A humble graduate refrains. Your booked insult pains his library above the provocative change. A transient dot storms outside the midnight.
+                </p>
+              </div>
+              <div class="col-xs-12">
+                <h2 class="text-center">Facts</h2>
+                <div class="modal-lists">
+                  <ul>
+                    <li>Type of heating: yes</li>
+                    <li>Air conditioning: yes</li>
+                    <li>Windows: yes</li>
+                    <li>Last sold: yes</li>
+                    <li>Type of heating: yes</li>
+                    <li>Air conditioning: yes</li>
+                    <li>Windows: yes</li>
+                    <li>Last sold: yes</li>
+                  </ul>
+                </div>
+                <div class="modal-lists">
+                  <ul>
+                    <li>Type of heating: yes</li>
+                    <li>Air conditioning: yes</li>
+                    <li>Windows: yes</li>
+                    <li>Last sold: yes</li>
+                    <li>Type of heating: yes</li>
+                    <li>Air conditioning: yes</li>
+                    <li>Windows: yes</li>
+                    <li>Last sold: yes</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xs-12">
+                <h2 class="text-center">Features</h2>
+                <div class="modal-lists">
+                  <ul>
+                    <li>Type of heating: yes</li>
+                    <li>Air conditioning: yes</li>
+                    <li>Windows: yes</li>
+                    <li>Last sold: yes</li>
+                    <li>Type of heating: yes</li>
+                    <li>Air conditioning: yes</li>
+                    <li>Windows: yes</li>
+                    <li>Last sold: yes</li>
+                  </ul>
+                </div>
+                <div class="modal-lists">
+                  <ul>
+                    <li>Type of heating: yes</li>
+                    <li>Air conditioning: yes</li>
+                    <li>Windows: yes</li>
+                    <li>Last sold: yes</li>
+                    <li>Type of heating: yes</li>
+                    <li>Air conditioning: yes</li>
+                    <li>Windows: yes</li>
+                    <li>Last sold: yes</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

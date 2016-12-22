@@ -1,3 +1,7 @@
+$main-color:#FF7A5A;
+$lighter-main-color:#94B3BA;
+$secondary-color:#62A2BE;
+$tertiary-color:#25A85A;
 html {
   box-sizing: border-box;
   height: 100%;
@@ -28,7 +32,7 @@ nav {
   ul {
     margin: 0;
     padding: 0;
-    background-color: #333333;
+    background-color: $main-color;
     position: relative;
     height: 52px;
     width: 100%;
@@ -43,7 +47,7 @@ nav {
         padding: 16px;
         text-decoration: none;
         &:hover {
-          background-color: gray;
+          background-color: $secondary-color;
           transition: background-color .5s;
           cursor: pointer;
         }
@@ -98,24 +102,27 @@ nav {
   display: none;
   margin: 0;
   padding: 0;
-  background-color: #cccccc;
+  background-color: $lighter-main-color;
   position: absolute;
   height: auto;
   width: 100%;
-  border-bottom: solid .5px gray;
+  border-bottom: solid .5px #f2f2f2;
   z-index: 100000;
   li {
-    border: solid .5px gray;
+    color: white;
+    border: solid .5px #f2f2f2;
     border-collapse: collapse;
+    transition: background-color .5s, color .5s;
     a {
       font: 300 20px sans-serif;
       display: block;
-      color: black;
+      color: white;
       text-align: center;
       padding: 16px;
       text-decoration: none;
+      transition: background-color .5s, color .5s;
       &:hover {
-        background-color: #333333;
+        background-color: $secondary-color;
         color: white;
         transition: background-color .5s, color .5s;
         cursor: pointer;
@@ -170,6 +177,39 @@ input[type="text"] {
     background-color: white;
     cursor: pointer;
     vertical-align: top;
+  }
+}
+
+#search-container {
+  position: absolute;
+  top: 54%;
+  left: 20px;
+  color: white;
+  z-index: 2;
+  width: 22%;
+  border: none;
+  max-height: 220px;
+  overflow: scroll;
+  .well {
+    position: relative;
+    background-color: $secondary-color;
+    margin-bottom: 10px;
+    height: 50px;
+    padding: 0px;
+    p {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 18px;
+      color: white;
+      margin: 0px;
+      padding-top: -20px;
+    }
+  }
+  @media (max-width:755px) {
+    width: 84%;
   }
 }
 
@@ -267,6 +307,84 @@ input[type="text"] {
   }
 }
 
+.info-window {
+  padding: 0px;
+  margin: 0px;
+  &:first-child {
+    position: relative;
+    width: 150px;
+    img {
+      height: 75px;
+      width: 75px;
+    }
+    p {
+      position: absolute;
+      top: 13px;
+      line-height: 1.7;
+      text-align: center;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 0px;
+      margin: 0px;
+    }
+    span {
+      font: 400 15px sans-serif;
+    }
+  }
+}
+
+.modal-body {
+  .carousel-inner {
+    img {
+      margin: 0px auto;
+    }
+  }
+  .home-facts {
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    li {
+      margin: 0px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      display: inline-block;
+      width: 32%;
+      color: $secondary-color;
+    }
+  }
+  span {
+    color: $tertiary-color;
+  }
+  h3 {
+    color: $main-color;
+  }
+  h2 {
+    color: $secondary-color;
+  }
+  .modal-lists {
+    width: 50%;
+    float: left;
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+  }
+  ul {
+    font-size: 18px;
+    list-style-position: inside;
+    @media (max-width: 600px) {
+      margin: 0px auto;
+    }
+  }
+  p {
+    margin-top: 25px;
+    text-indent: 20px;
+    font-size: 20px;
+  }
+}
+
 @media (max-width:755px) {
   .results {
     top: 52px;
@@ -322,6 +440,7 @@ input[type="text"] {
   }
   .bg {
     margin-top: 52px;
+    position: relative;
   }
   #logo {
     width: 50px;
@@ -379,7 +498,7 @@ input[type="text"] {
   #search {
     text-align: right;
     position: relative;
-    background-color: gray;
+    background-color: $secondary-color;
     width: 100%;
     margin: 0px;
     input[type="text"] {

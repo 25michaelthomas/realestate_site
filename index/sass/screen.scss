@@ -1,3 +1,7 @@
+//tetrad
+$main-color:#FF7A5A;
+$lighter-main-color:#94B3BA;
+$secondary-color:#62A2BE;
 html {
   box-sizing: border-box;
 }
@@ -36,9 +40,8 @@ input[type=text] {
   padding-left: 10px;
 }
 
-#search-button,
-#search-button:hover {
-  background-color: #FF7A5A;
+#search-button {
+  background-color: $main-color;
   color: white;
   cursor: pointer;
   padding: 10px 30px 10px;
@@ -48,20 +51,45 @@ input[type=text] {
   margin-top: 5px;
   border-radius: 10px;
   text-decoration: none;
+  transition: background-color 1s;
+  &:hover {
+    background-color: $secondary-color;
+    transition: background-color 1s;
+  }
 }
 
 #search-container {
   position: absolute;
   top: 55%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translateX(-50%);
   color: white;
   z-index: 2;
-  width: 70%;
-  max-width: 700px;
+  width: 60%;
+  max-width: 500px;
   border: none;
-  max-height: 320px;
+  max-height: 220px;
   overflow: scroll;
+  margin: 0px auto;
+  .well {
+    width: 100%;
+    position: relative;
+    background-color: $secondary-color;
+    margin-bottom: 10px;
+    height: 50px;
+    padding: 0px;
+    p {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 18px;
+      color: white;
+      margin: 0px;
+      padding: 0px;
+    }
+  }
 }
 
 .cb-slideshow,
@@ -206,7 +234,7 @@ nav {
   ul {
     margin: 0;
     padding: 0;
-    background-color: #333333;
+    background-color: $main-color;
     position: relative;
     height: 52px;
     width: 100%;
@@ -220,9 +248,10 @@ nav {
         text-align: center;
         padding: 16px;
         text-decoration: none;
+        transition: background-color 1s;
         &:hover {
-          background-color: gray;
-          transition: background-color .5s;
+          background-color: $secondary-color;
+          transition: background-color 1s;
           cursor: pointer;
         }
       }
@@ -237,9 +266,10 @@ nav {
         text-align: center;
         padding: 16px;
         text-decoration: none;
+        transition: background-color 1s;
         &:hover {
-          background-color: gray;
-          transition: background-color .5s;
+          background-color: $secondary-color;
+          transition: background-color 1s;
           cursor: pointer;
         }
       }
@@ -252,6 +282,11 @@ nav {
   a {
     font: 300 25px sans-serif;
     padding: 11.5px;
+    &:hover {
+      @media (max-width: 655px) {
+        background-color: $main-color;
+      }
+    }
   }
 }
 
@@ -292,24 +327,25 @@ nav {
   display: none;
   margin: 0;
   padding: 0;
-  background-color: #cccccc;
+  background-color: $lighter-main-color;
   position: absolute;
   height: auto;
   width: 100%;
   border-bottom: solid .5px gray;
   z-index: 100000;
   li {
-    border: solid .5px gray;
+    border: solid .5px #f2f2f2;
     border-collapse: collapse;
     a {
       font: 300 20px sans-serif;
       display: block;
-      color: black;
+      color: white;
       text-align: center;
       padding: 16px;
       text-decoration: none;
+      transition: background-color .5s, color .5s;
       &:hover {
-        background-color: #333333;
+        background-color: $secondary-color;
         color: white;
         transition: background-color .5s, color .5s;
         cursor: pointer;
@@ -371,7 +407,7 @@ $img in $cities {
 }
 
 footer {
-  background-color: #333333;
+  background-color: $main-color;
   height: auto;
   margin-top: 30px;
   color: white;

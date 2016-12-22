@@ -16,7 +16,7 @@
   },
     {
       "address": "134 hill street",
-      "type": "house",
+      "type": "House",
       "beds": "12",
       "baths": "4",
       "price": "2000",
@@ -28,13 +28,13 @@
       "long": "-73.910745"
   }
 ],
-  "los angeles": [
+  "Los Angeles, CA": [
     {
       "address": "134 hill street",
-      "type": "house",
+      "type": "House",
       "beds": "12",
       "baths": "4",
-      "price": "2000",
+      "price": "130000",
       "city": "Miami",
       "state": "FL",
       "picture": "http://www.directcommercialfunding.com/images/apartment-building-loans.jpg",
@@ -44,9 +44,9 @@
   },
     {
       "address": "134 hill street",
-      "type": "house",
+      "type": "House",
       "beds": "12",
-      "baths": "4",
+      "baths": "1",
       "price": "2000",
       "city": "Miami",
       "state": "FL",
@@ -57,7 +57,7 @@
   },
     {
       "address": "134 hill street",
-      "type": "house",
+      "type": "House",
       "beds": "12",
       "baths": "4",
       "price": "2000",
@@ -69,7 +69,7 @@
       "long": "-119.2440"
   }
 ],
-  "san diego": [
+  "San Diego, CA": [
     {
       "address": "133 Parker street",
       "type": "Apartment",
@@ -85,7 +85,7 @@
   },
     {
       "address": "134 hill street",
-      "type": "house",
+      "type": "House",
       "beds": "12",
       "baths": "4",
       "price": "2000",
@@ -97,7 +97,7 @@
       "long": "-73.910745"
   }
 ],
-  "boston": [
+  "Boston, MA": [
     {
       "address": "133 Parker street",
       "type": "Apartment",
@@ -113,7 +113,7 @@
   },
     {
       "address": "134 hill street",
-      "type": "house",
+      "type": "House",
       "beds": "12",
       "baths": "4",
       "price": "2000",
@@ -126,7 +126,7 @@
   },
     {
       "address": "134 hill street",
-      "type": "house",
+      "type": "House",
       "beds": "12",
       "baths": "4",
       "price": "2000",

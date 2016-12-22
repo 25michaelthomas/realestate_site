@@ -1,14 +1,14 @@
-/* line 1, ../sass/screen.scss */
+/* line 5, ../sass/screen.scss */
 html {
   box-sizing: border-box;
 }
 
-/* line 5, ../sass/screen.scss */
+/* line 9, ../sass/screen.scss */
 ul {
   list-style: none;
 }
 
-/* line 9, ../sass/screen.scss */
+/* line 13, ../sass/screen.scss */
 .bg {
   position: relative;
   width: 100%;
@@ -17,7 +17,7 @@ ul {
   background-color: gray;
 }
 
-/* line 17, ../sass/screen.scss */
+/* line 21, ../sass/screen.scss */
 #search {
   position: absolute;
   top: 50%;
@@ -29,7 +29,7 @@ ul {
   max-width: 700px;
 }
 
-/* line 28, ../sass/screen.scss */
+/* line 32, ../sass/screen.scss */
 input[type=text] {
   color: black;
   z-index: 2;
@@ -41,9 +41,8 @@ input[type=text] {
   padding-left: 10px;
 }
 
-/* line 39, ../sass/screen.scss */
-#search-button,
-#search-button:hover {
+/* line 43, ../sass/screen.scss */
+#search-button {
   background-color: #FF7A5A;
   color: white;
   cursor: pointer;
@@ -54,24 +53,52 @@ input[type=text] {
   margin-top: 5px;
   border-radius: 10px;
   text-decoration: none;
+  transition: background-color 1s;
+}
+/* line 55, ../sass/screen.scss */
+#search-button:hover {
+  background-color: #62A2BE;
+  transition: background-color 1s;
 }
 
-/* line 53, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
 #search-container {
   position: absolute;
   top: 55%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translateX(-50%);
   color: white;
   z-index: 2;
-  width: 70%;
-  max-width: 700px;
+  width: 60%;
+  max-width: 500px;
   border: none;
-  max-height: 320px;
+  max-height: 220px;
   overflow: scroll;
+  margin: 0px auto;
+}
+/* line 74, ../sass/screen.scss */
+#search-container .well {
+  width: 100%;
+  position: relative;
+  background-color: #62A2BE;
+  margin-bottom: 10px;
+  height: 50px;
+  padding: 0px;
+}
+/* line 81, ../sass/screen.scss */
+#search-container .well p {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: white;
+  margin: 0px;
+  padding: 0px;
 }
 
-/* line 67, ../sass/screen.scss */
+/* line 95, ../sass/screen.scss */
 .cb-slideshow,
 .cb-slideshow:after {
   position: absolute;
@@ -82,13 +109,13 @@ input[type=text] {
   z-index: 0;
 }
 
-/* line 77, ../sass/screen.scss */
+/* line 105, ../sass/screen.scss */
 .cb-slideshow:after {
   content: '';
   background: transparent url(../images/pattern.png) repeat top left;
 }
 
-/* line 82, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 .cb-slideshow li span {
   width: 100%;
   height: 100%;
@@ -105,7 +132,7 @@ input[type=text] {
   filter: brightness(70%);
 }
 
-/* line 98, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
 .cb-slideshow li div {
   z-index: 1000;
   position: absolute;
@@ -116,7 +143,7 @@ input[type=text] {
   color: #fff;
 }
 
-/* line 108, ../sass/screen.scss */
+/* line 136, ../sass/screen.scss */
 .cb-slideshow li div h3 {
   font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
   padding: 0;
@@ -124,62 +151,62 @@ input[type=text] {
   font-size: 30px;
 }
 
-/* line 115, ../sass/screen.scss */
+/* line 143, ../sass/screen.scss */
 .cb-slideshow li:nth-child(1) span {
   background-image: url(http://i.huffpost.com/gen/1425498/original.jpg);
 }
 
-/* line 119, ../sass/screen.scss */
+/* line 147, ../sass/screen.scss */
 .cb-slideshow li:nth-child(2) span {
   background-image: url(http://assets.inhabitat.com/wp-content/blogs.dir/1/files/2013/07/SmartSpace-SOMA-Panoramic-Interests-5.jpghttp://assets.inhabitat.com/wp-content/blogs.dir/1/files/2013/07/SmartSpace-SOMA-Panoramic-Interests-5.jpg);
   animation-delay: 7s;
 }
 
-/* line 124, ../sass/screen.scss */
+/* line 152, ../sass/screen.scss */
 .cb-slideshow li:nth-child(3) span {
   background-image: url(https://media-cdn.tripadvisor.com/media/photo-s/02/f5/c5/af/inside-barcelona-apartments.jpg);
   animation-delay: 15s;
 }
 
-/* line 129, ../sass/screen.scss */
+/* line 157, ../sass/screen.scss */
 .cb-slideshow li:nth-child(4) span {
   background-image: url(http://static2.businessinsider.com/image/5730ba649105842b008c1aa0-1190-625/the-21-most-expensive-houses-for-sale-in-the-hamptons.jpg);
   animation-delay: 23s;
 }
 
-/* line 134, ../sass/screen.scss */
+/* line 162, ../sass/screen.scss */
 .cb-slideshow li:nth-child(5) span {
   background-image: url(http://kingofwallpapers.com/house/house-002.jpg);
   animation-delay: 31s;
 }
 
-/* line 139, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 .cb-slideshow li:nth-child(6) span {
   background-image: url(http://s3.favim.com/orig/40/architecture-decor-house-houses-interior-design-Favim.com-330695.jpg);
   animation-delay: 39s;
 }
 
-/* line 144, ../sass/screen.scss */
+/* line 172, ../sass/screen.scss */
 .cb-slideshow li:nth-child(2) div {
   animation-delay: 7s;
 }
 
-/* line 148, ../sass/screen.scss */
+/* line 176, ../sass/screen.scss */
 .cb-slideshow li:nth-child(3) div {
   animation-delay: 15s;
 }
 
-/* line 152, ../sass/screen.scss */
+/* line 180, ../sass/screen.scss */
 .cb-slideshow li:nth-child(4) div {
   animation-delay: 23s;
 }
 
-/* line 156, ../sass/screen.scss */
+/* line 184, ../sass/screen.scss */
 .cb-slideshow li:nth-child(5) div {
   animation-delay: 31s;
 }
 
-/* line 160, ../sass/screen.scss */
+/* line 188, ../sass/screen.scss */
 .cb-slideshow li:nth-child(6) div {
   animation-delay: 39s;
 }
@@ -203,14 +230,14 @@ input[type=text] {
     opacity: 0;
   }
 }
-/* line 184, ../sass/screen.scss */
+/* line 212, ../sass/screen.scss */
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
 
-/* line 190, ../sass/screen.scss */
+/* line 218, ../sass/screen.scss */
 body {
   font-family: sans-serif;
   background-color: #f7f7f7;
@@ -218,79 +245,87 @@ body {
   position: relative;
 }
 
-/* line 197, ../sass/screen.scss */
+/* line 225, ../sass/screen.scss */
 a:focus,
 button:focus,
 input:focus {
   outline: none;
 }
 
-/* line 203, ../sass/screen.scss */
+/* line 231, ../sass/screen.scss */
 nav {
   position: relative;
   z-index: 3;
 }
-/* line 206, ../sass/screen.scss */
+/* line 234, ../sass/screen.scss */
 nav ul {
   margin: 0;
   padding: 0;
-  background-color: #333333;
+  background-color: #FF7A5A;
   position: relative;
   height: 52px;
   width: 100%;
 }
-/* line 213, ../sass/screen.scss */
+/* line 241, ../sass/screen.scss */
 nav ul .my_navbar {
   display: inline-block;
   width: 15%;
   margin: 0px 2.25% 0px;
 }
-/* line 217, ../sass/screen.scss */
+/* line 245, ../sass/screen.scss */
 nav ul .my_navbar a {
   display: block;
   color: white;
   text-align: center;
   padding: 16px;
   text-decoration: none;
+  transition: background-color 1s;
 }
-/* line 223, ../sass/screen.scss */
+/* line 252, ../sass/screen.scss */
 nav ul .my_navbar a:hover {
-  background-color: gray;
-  transition: background-color .5s;
+  background-color: #62A2BE;
+  transition: background-color 1s;
   cursor: pointer;
 }
-/* line 230, ../sass/screen.scss */
+/* line 259, ../sass/screen.scss */
 nav ul .footer_nav {
   display: inline-block;
   width: 13%;
   margin: 0px 2.25% 0px;
 }
-/* line 234, ../sass/screen.scss */
+/* line 263, ../sass/screen.scss */
 nav ul .footer_nav a {
   display: block;
   color: white;
   text-align: center;
   padding: 16px;
   text-decoration: none;
+  transition: background-color 1s;
 }
-/* line 240, ../sass/screen.scss */
+/* line 270, ../sass/screen.scss */
 nav ul .footer_nav a:hover {
-  background-color: gray;
-  transition: background-color .5s;
+  background-color: #62A2BE;
+  transition: background-color 1s;
   cursor: pointer;
 }
 
-/* line 250, ../sass/screen.scss */
+/* line 280, ../sass/screen.scss */
 #logo {
   vertical-align: top;
 }
-/* line 252, ../sass/screen.scss */
+/* line 282, ../sass/screen.scss */
 #logo a {
   font: 300 25px sans-serif;
   padding: 11.5px;
 }
+@media (max-width: 655px) {
+  /* line 285, ../sass/screen.scss */
+  #logo a:hover {
+    background-color: #FF7A5A;
+  }
+}
 
-/* line 258, ../sass/screen.scss */
+/* line 293, ../sass/screen.scss */
 #nav-button {
   position: absolute;
   top: 50%;
@@ -302,20 +337,20 @@ nav ul .footer_nav a:hover {
   display: none;
 }
 
-/* line 269, ../sass/screen.scss */
+/* line 304, ../sass/screen.scss */
 .rotate {
   -webkit-transform-origin: 50% 50% 0 !important;
   -webkit-transform: translateY(-50%) rotate(90deg) !important;
   -webkit-transition: transform .5s;
 }
 
-/* line 275, ../sass/screen.scss */
+/* line 310, ../sass/screen.scss */
 .reverse-rotate {
   transform: rotate(-90deg);
   transition: transform .5s;
 }
 
-/* line 280, ../sass/screen.scss */
+/* line 315, ../sass/screen.scss */
 .lines,
 .line:hover {
   border-bottom: 4px solid white;
@@ -327,46 +362,47 @@ nav ul .footer_nav a:hover {
   display: block;
 }
 
-/* line 291, ../sass/screen.scss */
+/* line 326, ../sass/screen.scss */
 #menu {
   display: none;
   margin: 0;
   padding: 0;
-  background-color: #cccccc;
+  background-color: #94B3BA;
   position: absolute;
   height: auto;
   width: 100%;
   border-bottom: solid .5px gray;
   z-index: 100000;
 }
-/* line 301, ../sass/screen.scss */
+/* line 336, ../sass/screen.scss */
 #menu li {
-  border: solid .5px gray;
+  border: solid .5px #f2f2f2;
   border-collapse: collapse;
 }
-/* line 304, ../sass/screen.scss */
+/* line 339, ../sass/screen.scss */
 #menu li a {
   font: 300 20px sans-serif;
   display: block;
-  color: black;
+  color: white;
   text-align: center;
   padding: 16px;
   text-decoration: none;
+  transition: background-color .5s, color .5s;
 }
-/* line 311, ../sass/screen.scss */
+/* line 347, ../sass/screen.scss */
 #menu li a:hover {
-  background-color: #333333;
+  background-color: #62A2BE;
   color: white;
   transition: background-color .5s, color .5s;
   cursor: pointer;
 }
 
-/* line 321, ../sass/screen.scss */
+/* line 357, ../sass/screen.scss */
 .div {
   height: 400px;
 }
 
-/* line 325, ../sass/screen.scss */
+/* line 361, ../sass/screen.scss */
 .background {
   margin: 20px 0px 20px;
   height: 90%;
@@ -374,7 +410,7 @@ nav ul .footer_nav a:hover {
   position: relative;
 }
 
-/* line 332, ../sass/screen.scss */
+/* line 368, ../sass/screen.scss */
 .cities {
   text-align: center;
   position: absolute;
@@ -385,12 +421,12 @@ nav ul .footer_nav a:hover {
   font: 400 30px sans-serif;
 }
 
-/* line 342, ../sass/screen.scss */
+/* line 378, ../sass/screen.scss */
 .divider {
   margin-top: 40px;
 }
 
-/* line 347, ../sass/screen.scss */
+/* line 383, ../sass/screen.scss */
 #san_diego:before, #dallas:before, #boston:before, #new_york:before, #philadelphia:before, #atlanta:before, #chicago:before, #seattle:before, #baltimore:before, #los_angeles:before, #san_francisco:before, #miami:before, #new_orleans:before {
   content: "";
   position: absolute;
@@ -405,94 +441,94 @@ nav ul .footer_nav a:hover {
   background-image: url(http://www.welcometosandiego.com/wp-content/uploads/2010/02/C-Street-Vision.jpg);
 }
 
-/* line 367, ../sass/screen.scss */
+/* line 403, ../sass/screen.scss */
 #dallas:before {
   background-image: url(https://www.chcp.edu/sites/default/files/content/CHCP-Dallas-Campus.jpg);
 }
 
-/* line 367, ../sass/screen.scss */
+/* line 403, ../sass/screen.scss */
 #boston:before {
   background-image: url(http://wallpaperbeta.com/wallpaper_3840x2160/boston_street_bicycle_city_ultra_3840x2160_hd-wallpaper-302534.jpg);
 }
 
-/* line 367, ../sass/screen.scss */
+/* line 403, ../sass/screen.scss */
 #new_york:before {
   background-image: url(http://www.themebin.com/wp-content/uploads/hd-wallpapers/1920x1200/New_York_Time_Square_by_HairJay.jpg);
 }
 
-/* line 367, ../sass/screen.scss */
+/* line 403, ../sass/screen.scss */
 #philadelphia:before {
   background-image: url(https://www.bestwallpapers-hd.com/web/wallpapers/heart-of-philadelphia/1920x1080.jpg);
 }
 
-/* line 367, ../sass/screen.scss */
+/* line 403, ../sass/screen.scss */
 #atlanta:before {
   background-image: url(http://thenmf.org/wp-content/uploads/2015/05/Prince-of-Wales-Monument-2-960x680.jpg);
 }
 
-/* line 367, ../sass/screen.scss */
+/* line 403, ../sass/screen.scss */
 #chicago:before {
   background-image: url(http://5mpx.com/get/index.php?img=_thumb_post/Bahai-Temple-Chicago-5mpx-com-5mpx.com.jpg);
 }
 
-/* line 367, ../sass/screen.scss */
+/* line 403, ../sass/screen.scss */
 #seattle:before {
   background-image: url(http://hdwallpaperpics.org/wp-content/uploads/2015/06/Seattle-Wallpaper-10.jpg);
 }
 
-/* line 367, ../sass/screen.scss */
+/* line 403, ../sass/screen.scss */
 #baltimore:before {
   background-image: url(http://www.detoxmenow.org/wp-content/uploads/2014/07/Baltimore_Inner_Harbor_Maryland.jpg);
 }
 
-/* line 367, ../sass/screen.scss */
+/* line 403, ../sass/screen.scss */
 #los_angeles:before {
   background-image: url(https://newevolutiondesigns.com/images/freebies/los-angeles-santa-monica.jpg);
 }
 
-/* line 367, ../sass/screen.scss */
+/* line 403, ../sass/screen.scss */
 #san_francisco:before {
   background-image: url(http://static1.squarespace.com/static/547f29bfe4b0dc192ed7bdac/54aeb15ce4b018c14f34c7cb/54aeb160e4b018c14f34c7ed/1420734817363/san-franc.jpg?format=2500w);
 }
 
-/* line 367, ../sass/screen.scss */
+/* line 403, ../sass/screen.scss */
 #miami:before {
   background-image: url(http://noellegoveia.com/wp-content/uploads/2013/08/ST-PATRICK-CHURCH-MIAMI-BEACH-BOTANICAL-GARDENS-WEDDING-NOELLE-GOVEIA-PHOTOGRAPHY-12.jpg);
 }
 
-/* line 367, ../sass/screen.scss */
+/* line 403, ../sass/screen.scss */
 #new_orleans:before {
   background-image: url(http://www.pompo.com/wp-content/uploads/2011/02/IMG_4129horiz.jpg);
 }
 
-/* line 373, ../sass/screen.scss */
+/* line 409, ../sass/screen.scss */
 footer {
-  background-color: #333333;
+  background-color: #FF7A5A;
   height: auto;
   margin-top: 30px;
   color: white;
 }
-/* line 378, ../sass/screen.scss */
+/* line 414, ../sass/screen.scss */
 footer p {
   margin-top: 10px;
 }
 
 @media (max-width: 620px) {
-  /* line 384, ../sass/screen.scss */
+  /* line 420, ../sass/screen.scss */
   #search {
     width: 100%;
   }
-  /* line 386, ../sass/screen.scss */
+  /* line 422, ../sass/screen.scss */
   #search input[type=text] {
     width: 60%;
   }
-  /* line 389, ../sass/screen.scss */
+  /* line 425, ../sass/screen.scss */
   #search a {
     width: 90px;
   }
 }
 @media (max-width: 655px) {
-  /* line 396, ../sass/screen.scss */
+  /* line 432, ../sass/screen.scss */
   #menu {
     display: none;
     position: absolute;
@@ -502,40 +538,40 @@ footer p {
     width: 100%;
   }
 
-  /* line 404, ../sass/screen.scss */
+  /* line 440, ../sass/screen.scss */
   .my_navbar:not(#logo) {
     display: none;
   }
 
-  /* line 407, ../sass/screen.scss */
+  /* line 443, ../sass/screen.scss */
   #nav-button {
     display: block;
   }
-  /* line 409, ../sass/screen.scss */
+  /* line 445, ../sass/screen.scss */
   #nav-button:hover {
     cursor: pointer;
   }
 
-  /* line 413, ../sass/screen.scss */
+  /* line 449, ../sass/screen.scss */
   nav:not(#footer) {
     position: fixed;
     top: 0;
     width: 100%;
   }
 
-  /* line 418, ../sass/screen.scss */
+  /* line 454, ../sass/screen.scss */
   .bg {
     margin-top: 52px;
   }
 }
 @media (min-width: 656px) and (max-width: 990px) {
-  /* line 424, ../sass/screen.scss */
+  /* line 460, ../sass/screen.scss */
   #menu {
     display: none !important;
   }
 }
 @media (min-width: 990px) {
-  /* line 430, ../sass/screen.scss */
+  /* line 466, ../sass/screen.scss */
   #menu {
     display: none !important;
   }
