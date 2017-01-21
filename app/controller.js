@@ -1,7 +1,9 @@
 app.controller('MainController', ['$scope', "applyFilters", "getResults", "$rootScope", "liveSearch", function ($scope, applyFilters, getResults, $rootScope, liveSearch) {
+  $scope.applyFilters = applyFilters;
   $scope.apply = applyFilters.initResults2;
   $scope.change = applyFilters.change;
   $scope.liveSearch = liveSearch.suggestions2;
+  $scope.liveSearch2 = liveSearch.suggestions;
   $scope.rotation = 0;
   $scope.results = applyFilters.results;
   $scope.rotate = function () {
@@ -22,7 +24,16 @@ app.controller('MainController', ['$scope', "applyFilters", "getResults", "$root
   $scope.searchedCity = applyFilters.results.searchedCity;
   $scope.search = applyFilters.results.searchWords;
   $scope.pickCity = applyFilters.searchedCity;
+  $scope.getNumber = function (num) {
+    var number = parseFloat(num);
+    return new Array(number);
+  }
+  $scope.$on('$routeChangeSuccess', function (event) {
 
+
+    $scope.apply($scope.searchedCity.val);
+
+  });
 }]);
 
 app.controller('OtherController', ['$scope', "applyFilters", "getResults", "$rootScope", "liveSearch", function ($scope, applyFilters, getResults, $rootScope, liveSearch) {

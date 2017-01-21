@@ -1,39 +1,50 @@
-<div data-ng-init="apply()">
+<div data-ng-click="focus = 0" id="rent-page">
   <nav>
     <ul>
-      <li class="my_navbar"><a href="#buy">Buy</a></li>
-      <li class="my_navbar"><a href="#sell">Sell</a></li>
-      <li class="my_navbar" id="logo"><a href="../index/index.html">RESI</a></li>
-      <li class="my_navbar"><a href="#rent">Rent</a></li>
-      <li class="my_navbar"><a href="#hotels">Hotels</a></li>
+      <li class="my_navbar" data-ng-click="liveSearch2('For Sale'); pickCity(city.city[0])"><a href="#buy" data-ng-click="liveSearch2('For Sale'); pickCity(city.city[0])">Buy</a></li>
+      <li class="my_navbar"><a>Sell</a></li>
+      <li class="my_navbar" id="logo"><a href="#home">RESI</a></li>
+      <li class="my_navbar" data-ng-click="liveSearch2('For Rent'); pickCity(city.city[0])"><a href="#rent" data-ng-click="liveSearch2('For Rent'); pickCity(city.city[0])">Rent</a></li>
+      <li class="my_navbar"><a href="#hotels" id="active">Hotels</a></li>
     </ul>
 
-    <button type="button" id="nav-button">
+    <button type="button" id="nav-button" data-ng-click="rotate()" data-ng-class="rotate: rotation === 1 ; reverse-rotate: rotation === 2">
         <span class="lines"></span>
         <span class="lines"></span>
         <span class="lines"></span>
     </button>
 
     <ul id="menu">
-      <li><a href="#buy">Buy</a></li>
-      <li><a href="#sell">Sell</a></li>
-      <li><a href="#rent">Rent</a></li>
-      <li><a href="#hotels">Hotels</a></li>
+      <li data-ng-click="liveSearch2('For Sale'); pickCity(city.city[0])"><a href="#buy" data-ng-click="liveSearch2('For Sale'); pickCity(city.city[0])">Buy</a></li>
+      <li><a>Sell</a></li>
+      <li data-ng-click="liveSearch2('For Rent'); pickCity(city.city[0])"><a href="#rent" data-ng-click="liveSearch2('For Rent'); pickCity(city.city[0])">Rent</a></li>
+      <li data-ng-click="liveSearch2('Hotels'); pickCity(city.city[0])"><a href="#hotels" id="active" data-ng-click="liveSearch2('Hotels'); pickCity(city.city[0])">Hotels</a></li>
     </ul>
   </nav>
 
   <div id="search">
-    <input type="text" placeholder="Enter a city" data-ng-model="search">
     <div>
+      <input type="text" id="search-bar" placeholder="Enter a city" data-ng-model="search" data-ng-keyup="liveSearch('Hotels'); focus = 1">
+
       <span class="glyphicon glyphicon-search"></span>
+      <div id="search-container" data-ng-show="focus">
+        <div class="row">
+          <div data-ng-repeat="x in city.city">
+            <a href="#hotels" target="_self" data-ng-click="pickCity(x); searchBarClick(); apply(searchedCity.val)">
+              <div class="col-xs-12 well text-center">
+                <p>{{x.key}}</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="placeholder">
       <p></p>
     </div>
     <form id="other-filters">
 
-
-      <select name="Min Price" class="custom-select" data-ng-model="a" data-ng-change="change('Min Price', a);apply()">
+      <select name="Min Price" class="custom-select" data-ng-model="a" data-ng-change="change('Min Price', a);apply(searchedCity.val)">
               <option data-ng-selected="1 === 1">Min Price</option>
               <option>500+</option>
               <option>750+</option>
@@ -44,7 +55,7 @@
               <option>2000+</option>
               <option>2500+</option>
             </select>
-      <select name="Max Price" class="custom-select" data-ng-model="b" data-ng-change="change('Max Price', b);apply()">
+      <select name="Max Price" class="custom-select" data-ng-model="b" data-ng-change="change('Max Price', b);apply(searchedCity.val)">
               <option data-ng-selected="1 === 1">Max Price</option>
               <option>500+</option>
               <option>750+</option>
@@ -55,23 +66,23 @@
               <option>2000+</option>
               <option>2500+</option>
             </select>
-      <select name="Bathrooms" class="custom-select" data-ng-model="c" data-ng-change="change('Bathrooms', c);apply()">
-              <option data-ng-selected="1 === 1">Bathrooms</option>
-              <option>0+</option>
+      <select name="Star rating" class="custom-select" data-ng-model="i" data-ng-change="change('Star rating', i);apply(searchedCity.val)">
+              <option data-ng-selected="1 === 1">Star rating</option>
               <option>1+</option>
-              <option>1.5+</option>
               <option>2+</option>
               <option>3+</option>
+              <option>4+</option>
+              <option>5</option>
             </select>
-      <select name="Bedrooms" class="custom-select" data-ng-model="d" data-ng-change="change('Bedrooms', d);apply()">
-              <option data-ng-selected="1 === 1">Bedrooms</option>
+      <select name="Bedrooms" class="custom-select" data-ng-model="d" data-ng-change="change('Bedrooms', d);apply(searchedCity.val)">
+              <option data-ng-selected="1 === 1">Beds</option>
               <option>0+</option>
               <option>1+</option>
               <option>2+</option>
               <option>3+</option>
               <option>4+</option>
             </select>
-      <select name="Square feet" class="custom-select" data-ng-model="e" data-ng-change="change('Square feet', e);apply()">
+      <select name="Square feet" class="custom-select" data-ng-model="e" data-ng-change="change('Square feet', e);apply(searchedCity.val)">
               <option data-ng-selected="1 === 1">Square feet</option>
               <option>2000+ sqft</option>
               <option>3000+ sqft</option>
@@ -79,10 +90,13 @@
               <option>5000+ sqft</option>
               <option>7500+ sqft</option>
             </select>
-      <select name="Home type" class="custom-select" data-ng-model="f" data-ng-change="change('Home type', f);apply()">
-             <option data-ng-selected="1 === 1">Home type</option>
-              <option>House</option>
-              <option>Apartment</option>
+      <select name="Room type" class="custom-select" data-ng-model="g" data-ng-change="change('Room type', g);apply(searchedCity.val)">
+             <option data-ng-selected="1 === 1">Room type</option>
+              <option>Single</option>
+              <option>Double</option>
+              <option>Triple</option>
+              <option>Mini Suite</option>
+              <option>Master Suite</option>
             </select>
 
     </form>
@@ -98,7 +112,7 @@
         <div class="modal-body">
           <form class="modal-form">
 
-            <select name="Min Price" class="custom-select" data-ng-model="a" data-ng-change="change('Min Price', a);apply()">
+            <select name="Min Price" class="custom-select" data-ng-model="a" data-ng-change="change('Min Price', a);apply(searchedCity.val)">
               <option data-ng-selected="1 === 1">Min Price</option>
               <option>500+</option>
               <option>750+</option>
@@ -111,7 +125,7 @@
             </select>
 
 
-            <select name="Max Price" class="custom-select" data-ng-model="b" data-ng-change="change('Max Price', b);apply()">
+            <select name="Max Price" class="custom-select" data-ng-model="b" data-ng-change="change('Max Price', b);apply(searchedCity.val)">
               <option data-ng-selected="1 === 1">Max Price</option>
               <option>500+</option>
               <option>750+</option>
@@ -124,18 +138,18 @@
             </select>
 
 
-            <select name="Bathrooms" class="custom-select" data-ng-model="c" data-ng-change="change('Bathrooms', c);apply()">
-              <option data-ng-selected="1 === 1">Bathrooms</option>
-              <option>0+</option>
+            <select name="Star rating" class="custom-select" data-ng-model="i" data-ng-change="change('Star rating', i);apply(searchedCity.val)">
+              <option data-ng-selected="1 === 1">Star rating</option>
               <option>1+</option>
-              <option>1.5+</option>
               <option>2+</option>
               <option>3+</option>
+              <option>4+</option>
+              <option>5</option>
             </select>
 
 
-            <select name="Bedrooms" class="custom-select" data-ng-model="d" data-ng-change="change('Bedrooms', d);apply()">
-              <option data-ng-selected="1 === 1">Bedrooms</option>
+            <select name="Bedrooms" class="custom-select" data-ng-model="d" data-ng-change="change('Bedrooms', d);apply(searchedCity.val)">
+              <option data-ng-selected="1 === 1">Beds</option>
               <option>0+</option>
               <option>1+</option>
               <option>2+</option>
@@ -144,7 +158,7 @@
             </select>
 
 
-            <select name="Square feet" class="custom-select" data-ng-model="e" data-ng-change="change('Square feet', e);apply()">
+            <select name="Square feet" class="custom-select" data-ng-model="e" data-ng-change="change('Square feet', e);apply(searchedCity.val)">
               <option data-ng-selected="1 === 1">Square feet</option>
               <option>2000+ sqft</option>
               <option>3000+ sqft</option>
@@ -154,10 +168,13 @@
             </select>
 
 
-            <select name="Home type" class="custom-select" data-ng-model="f" data-ng-change="change('Home type', f);apply()">
-             <option data-ng-selected="1 === 1">Home type</option>
-              <option>House</option>
-              <option>Apartment</option>
+            <select name="Room type" class="custom-select" data-ng-model="g" data-ng-change="change('Room type', g);apply(searchedCity.val)">
+             <option data-ng-selected="1 === 1">Room type</option>
+              <option>Single</option>
+              <option>Double</option>
+              <option>Triple</option>
+              <option>Mini Suite</option>
+              <option>Master Suite</option>
             </select>
 
 
@@ -168,34 +185,143 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
         </div>
       </div>
     </div>
   </div>
   <div class="results">
     <div class="results-header text-center">
-      <h2 class="h1">San Diego, CA</h2>
-      <p class="h3">{{results.homes.length}} homes for rent </p>
+      <h2 class="h1">{{searchedCity.key}}</h2>
+      <p class="h3">{{results.homes.length}} rooms </p>
     </div>
     <div>
 
       <div data-ng-repeat="home in results.homes">
-        <city></city>
+        <div class="results-homes" data-toggle="modal" data-target="#resultsModal" data-ng-click="$parent.results.currentHome.currentHome = home">
+          <span data-ng-style="{'background-image':'url(' + home.picture + ')'}"></span>
+          <div>
+            <p><span data-ng-repeat="i in getNumber(home.rating) track by $index"><span class="glyphicon glyphicon-star"></span> </span><span class="pull-right">{{home.beds}} bds/{{home.baths}} ba/{{home.sqft}} sqft</span>
+            </p>
+            <p>{{home.price}}/mo<span class="pull-right">{{home.address}}</span></p>
+          </div>
+        </div>
       </div>
     </div>
-
   </div>
+
   <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog" aria-labelledby="my_modal_label">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="my_modal_label">This home's profile</h4>
+          <h2 class="modal-title" id="my_modal_label">This room's profile</h2>
         </div>
         <div class="modal-body">
-          beds: {{place.beds}}
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img src="{{results.currentHome.currentHome.picture}}" alt="Outside of the building">
+
+              </div>
+              <div class="item ">
+                <img src="http://arlingtonhomeinteriors.com/wp-content/uploads/2015/06/AHI-slider2-Living-Room-2.jpg" alt="Random room">
+
+              </div>
+              <div class="item">
+                <img src="http://static1.mysiteserver.net/w/936/h/500/sm/2/p/Images/LuxeHomeInteriors/site/febSlides/6010_1285_V2_0412.jpgx" alt="Random room">
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-8">
+                <h3>{{results.currentHome.currentHome.address}}</h3>
+              </div>
+              <div class="col-xs-4 text-center">
+                <h4 class="h3">Hotel room <br /><span>${{results.currentHome.currentHome.price}}</span></h4>
+                <!--Add calculator on sale page for mortgage and calendar/calculator on hotel page-->
+              </div>
+              <div class="col-xs-12">
+                <ul class="home-facts">
+                  <li>{{results.currentHome.currentHome.beds}} Beds</li>
+                  <li>{{results.currentHome.currentHome.baths}} Baths</li>
+                  <li>{{results.currentHome.currentHome.sqft}} Sqft</li>
+                </ul>
+              </div>
+              <div class="col-xs-12">
+                <p>Can the forbidden intellect decide behind the alcohol? A controller applies a reflecting firework. A humble graduate refrains. Your booked insult pains his library above the provocative change. A transient dot storms outside the midnight. Can the forbidden intellect decide behind the alcohol? A controller applies a reflecting firework. A humble graduate refrains. Your booked insult pains his library above the provocative change. A transient dot storms outside the midnight.
+                </p>
+              </div>
+              <div class="col-xs-12">
+                <h2 class="text-center">Facts</h2>
+                <div class="modal-lists">
+                  <ul>
+                    <li>Type of heating: yes</li>
+                    <li>Air conditioning: yes</li>
+                    <li>Windows: yes</li>
+                    <li>Last sold: yes</li>
+                    <li>Type of heating: yes</li>
+                    <li>Air conditioning: yes</li>
+                    <li>Windows: yes</li>
+                    <li>Last sold: yes</li>
+                  </ul>
+                </div>
+                <div class="modal-lists">
+                  <ul>
+                    <li>Type of heating: yes</li>
+                    <li>Air conditioning: yes</li>
+                    <li>Windows: yes</li>
+                    <li>Last sold: yes</li>
+                    <li>Type of heating: yes</li>
+                    <li>Air conditioning: yes</li>
+                    <li>Windows: yes</li>
+                    <li>Last sold: yes</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xs-12">
+                <h2 class="text-center">Features</h2>
+                <div class="modal-lists">
+                  <ul>
+                    <li>Type of heating: yes</li>
+                    <li>Air conditioning: yes</li>
+                    <li>Windows: yes</li>
+                    <li>Last sold: yes</li>
+                    <li>Type of heating: yes</li>
+                    <li>Air conditioning: yes</li>
+                    <li>Windows: yes</li>
+                    <li>Last sold: yes</li>
+                  </ul>
+                </div>
+                <div class="modal-lists">
+                  <ul>
+                    <li>Type of heating: yes</li>
+                    <li>Air conditioning: yes</li>
+                    <li>Windows: yes</li>
+                    <li>Last sold: yes</li>
+                    <li>Type of heating: yes</li>
+                    <li>Air conditioning: yes</li>
+                    <li>Windows: yes</li>
+                    <li>Last sold: yes</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

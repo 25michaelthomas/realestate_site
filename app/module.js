@@ -36,7 +36,5 @@ app.config(['$routeProvider', function ($routeProvider) {
       templateUrl: "../index/index.html",
       css: '../index/stylesheets/screen.css'
     })
-    .otherwise({
-      redirectTo: "/rent"
-    });
+
 }]);

@@ -1,11 +1,11 @@
 <div data-ng-click="focus = 0" id="rent-page">
   <nav>
     <ul>
-      <li class="my_navbar"><a href="#buy">Buy</a></li>
+      <li class="my_navbar" data-ng-click="liveSearch2('For Sale'); pickCity(city.city[0])"><a href="#buy" data-ng-click="liveSearch2('For Sale'); pickCity(city.city[0])">Buy</a></li>
       <li class="my_navbar"><a>Sell</a></li>
       <li class="my_navbar" id="logo"><a href="#home">RESI</a></li>
-      <li class="my_navbar"><a href="#rent">Rent</a></li>
-      <li class="my_navbar"><a href="#hotels">Hotels</a></li>
+      <li class="my_navbar" data-ng-click="liveSearch2('For Rent'); pickCity(city.city[0])"><a href="#rent" id="active" data-ng-click='liveSearch2("For Rent"); pickCity(city.city[0])'>Rent</a></li>
+      <li class="my_navbar" data-ng-click="liveSearch2('Hotels'); pickCity(city.city[0])"><a href="#hotels" data-ng-click='liveSearch2("Hotels"); pickCity(city.city[0])'>Hotels</a></li>
     </ul>
 
     <button type="button" id="nav-button" data-ng-click="rotate()" data-ng-class="rotate: rotation === 1 ; reverse-rotate: rotation === 2">
@@ -15,22 +15,22 @@
     </button>
 
     <ul id="menu">
-      <li><a href="#buy">Buy</a></li>
+      <li data-ng-click="liveSearch2('For Sale'); pickCity(city.city[0])"><a href="#buy" data-ng-click="liveSearch2('For Sale'); pickCity(city.city[0])">Buy</a></li>
       <li><a>Sell</a></li>
-      <li><a href="#rent">Rent</a></li>
-      <li><a href="#hotels">Hotels</a></li>
+      <li><a href="#rent" id="active">Rent</a></li>
+      <li data-ng-click="liveSearch2('Hotels'); pickCity(city.city[0])"><a href="#hotels" data-ng-click="liveSearch2('Hotels'); pickCity(city.city[0])">Hotels</a></li>
     </ul>
   </nav>
 
   <div id="search">
     <div>
-      <input type="text" id="search-bar" placeholder="Enter a city" data-ng-model="search" data-ng-keyup="liveSearch(); focus = 1">
+      <input type="text" id="search-bar" placeholder="Enter a city" data-ng-model="search" data-ng-keyup="liveSearch('For Rent'); focus = 1">
 
       <span class="glyphicon glyphicon-search"></span>
       <div id="search-container" data-ng-show="focus">
         <div class="row">
           <div data-ng-repeat="x in city.city">
-            <a href="#" data-ng-click="pickCity(x); searchBarClick(); apply(searchedCity.val)">
+            <a data-ng-click="pickCity(x); searchBarClick(); apply(x.val)">
               <div class="col-xs-12 well text-center">
                 <p>{{x.key}}</p>
               </div>
@@ -187,8 +187,8 @@
   </div>
   <div class="results">
     <div class="results-header text-center">
-      <h2 class="h1">{{searchedCity.key}}</h2>
-      <p class="h3" data-ng-click="apply(searchedCity.val)">{{results.homes.length}} for rent </p>
+      <h2 class="h1">{{results.searchedCity.key}}</h2>
+      <p class="h3">{{results.homes.length}} for rent </p>
     </div>
     <div>
 
@@ -250,7 +250,7 @@
                 </ul>
               </div>
               <div class="col-xs-12">
-                <p>Can the forbidden intellect decide behind the alcohol? A controller applies a reflecting firework. A humble graduate refrains. Your booked insult pains his library above the provocative change. A transient dot storms outside the midnight. Can the forbidden intellect decide behind the alcohol? A controller applies a reflecting firework. A humble graduate refrains. Your booked insult pains his library above the provocative change. A transient dot storms outside the midnight.
+                <p>Stay in this urban and vibrant 2 bedroom apartment in Midtown West. This great space features unique architectural details including an entrance alcove, arched doorways and beautifully restored hardwood floors. The updated, eat-in kitchen is separate from the living area and offers a dishwasher and microwave. The unit features great closet space and track lights throughout. Enjoy an array of amenities that are an extension of your home. Pets are allowed.
                 </p>
               </div>
               <div class="col-xs-12">

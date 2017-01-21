@@ -3,11 +3,11 @@
 
   <nav class="nav">
     <ul>
-      <li class="my_navbar"><a href="#buy">Buy</a></li>
+      <li class="my_navbar" data-ng-click="liveSearch2('For Sale'); pickCity(city.city[0])"><a href="#buy" data-ng-click="liveSearch2('For Sale'); pickCity(city.city[0])">Buy</a></li>
       <li class="my_navbar"><a>Sell</a></li>
       <li class="my_navbar" id="logo"><a href="#home">RESI</a></li>
-      <li class="my_navbar"><a href="#rent">Rent</a></li>
-      <li class="my_navbar"><a href="#hotels">Hotels</a></li>
+      <li class="my_navbar" data-ng-click='liveSearch2("For Rent"); pickCity(city.city[0])'><a href="#rent" data-ng-click='liveSearch2("For Rent"); pickCity(city.city[0])'>Rent</a></li>
+      <li class="my_navbar" data-ng-click="liveSearch2('Hotels'); pickCity(city.city[0])"><a href="#hotels" data-ng-click="liveSearch2('Hotels'); pickCity(city.city[0])">Hotels</a></li>
     </ul>
 
     <button type="button" id="nav-button" data-ng-click="rotate()" data-ng-class="rotate: rotation === 1 ; reverse-rotate: rotation === 2">
@@ -17,16 +17,16 @@
     </button>
 
     <ul id="menu">
-      <li><a href="../contact_page/contact.html">Buy</a></li>
+      <li data-ng-click="liveSearch2('For Sale'); pickCity(city.city[0])"><a href="#buy" data-ng-click="liveSearch2('For Sale'); pickCity(city.city[0])">Buy</a></li>
       <li><a>Sell</a></li>
-      <li><a href="../app/app.html">Rent</a></li>
-      <li><a href="../about_page/about.html">Hotels</a></li>
+      <li data-ng-click="liveSearch2('For Rent'); pickCity(city.city[0])"><a href="#rent" data-ng-click="liveSearch2('For Rent'); pickCity(city.city[0])">Rent</a></li>
+      <li data-ng-click="liveSearch2('Hotels'); pickCity(city.city[0])"><a href="#hotels" data-ng-click="liveSearch2('Hotels'); pickCity(city.city[0])">Hotels</a></li>
     </ul>
   </nav>
   <div class="bg">
 
     <div class="text-center" id="search">
-      <input type="text" placeholder="Search for an apartment" data-ng-model="search" id="search-bar" data-ng-keyup="liveSearch(); focus = 1">
+      <input type="text" placeholder="Search for an apartment" data-ng-model="search" id="search-bar" data-ng-keyup="liveSearch('For Rent'); focus = 1">
       <a data-ng-click="pickCity(city.city[0]); searchBarClick()" href="#rent" id="search-button">Search</a>
     </div>
     <div id="search-container" data-ng-show="focus">

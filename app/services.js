@@ -17,6 +17,8 @@ app.factory('applyFilters', ['getResults', function (getResults) {
     bedrooms: 0,
     squareFeet: 0,
     type: 0,
+    rating: 0,
+    roomType: 0,
     searchWords: "",
     searchedCity: {
       key: "No results found"
@@ -86,11 +88,28 @@ app.factory('applyFilters', ['getResults', function (getResults) {
             results.type = 0;
           }
           break;
+        case "Star rating":
+          if (val !== "Star rating") {
+
+            results.rating = parseFloat(val);
+
+          } else {
+            results.rating = 0;
+          }
+          break;
+        case "Room type":
+          if (val !== "Room type") {
+
+            results.roomType = val;
+
+          } else {
+            results.roomType = 0;
+          }
+          break;
         default:
           alert("idk");
       }
     },
-
     initResults2: function (homes) {
       results.homes = [];
 
@@ -132,8 +151,10 @@ app.factory('applyFilters', ['getResults', function (getResults) {
             lng: parseInt(homes[i].long)
           };
           var dataHomeType = homes[i].type;
+          var dataRating = parseFloat(homes[i].rating);
+          var dataRoomType = homes[i].roomType;
 
-          if ((dataBaths >= results.bathrooms) && (dataBeds >= results.bedrooms) && (results.minPrice <= dataPrice) && (dataPrice <= results.maxPrice) && (dataSqft >= results.squareFeet) && (results.type == 0 || dataHomeType == results.type)) {
+          if ((dataBaths >= results.bathrooms) && (dataBeds >= results.bedrooms) && (results.minPrice <= dataPrice) && (dataPrice <= results.maxPrice) && (dataSqft >= results.squareFeet) && (results.type == 0 || dataHomeType == results.type) && (results.roomType == 0 || dataRoomType == results.roomType) && (results.rating <= dataRating)) {
             marker[i] = new google.maps.Marker({
               position: myLatLng,
               map: map,
@@ -176,14 +197,15 @@ app.factory('applyFilters', ['getResults', function (getResults) {
         }());
       }
     },
+    fixResults: function () {
+      return results;
+    },
     results: results,
     search: function () {
       results.searchWords = $("#search-bar").val();
     },
     searchedCity: function (x) {
-
       results.searchedCity = x;
-
     }
   }
 }]);
@@ -194,12 +216,30 @@ app.factory('liveSearch', ['getResults', function (getResults) {
   };
 
   return {
-    suggestions2: function () {
+    suggestions: function (page) {
+
+      var searchBar = thisCity.city[0].key;
+      var regex = new RegExp("^" + searchBar, "i");
+      getResults.success(function (data) {
+        thisCity.city = [];
+        angular.forEach(data[page], function (val, key) {
+
+          if (key.search(regex) != -1) {
+            thisCity.city.push({
+              key: key,
+              val: val
+            });
+
+          }
+        });
+      });
+    },
+    suggestions2: function (page) {
       var searchBar = $("#search-bar").val();
       var regex = new RegExp("^" + searchBar, "i");
       getResults.success(function (data) {
         thisCity.city = [];
-        angular.forEach(data, function (val, key) {
+        angular.forEach(data[page], function (val, key) {
 
           if (key.search(regex) != -1) {
             thisCity.city.push({
