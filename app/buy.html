@@ -30,7 +30,7 @@
       <div id="search-container" data-ng-show="focus">
         <div class="row">
           <div data-ng-repeat="x in city.city">
-            <a href="#buy" target="_self" data-ng-click="pickCity(x); searchBarClick(); apply(searchedCity.val)">
+            <a data-ng-click="pickCity(x); searchBarClick(); apply(x.val)">
               <div class="col-xs-12 well text-center">
                 <p>{{x.key}}</p>
               </div>
@@ -44,7 +44,7 @@
     </div>
     <form id="other-filters">
 
-      <select name="Min Price" class="custom-select" data-ng-model="a" data-ng-change="change('Min Price', a);apply(searchedCity.val)">
+      <select name="Min Price" class="custom-select" data-ng-model="a" data-ng-change="change('Min Price', a);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Min Price</option>
               <option>500+</option>
               <option>750+</option>
@@ -55,7 +55,7 @@
               <option>2000+</option>
               <option>2500+</option>
             </select>
-      <select name="Max Price" class="custom-select" data-ng-model="b" data-ng-change="change('Max Price', b);apply(searchedCity.val)">
+      <select name="Max Price" class="custom-select" data-ng-model="b" data-ng-change="change('Max Price', b);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Max Price</option>
               <option>500+</option>
               <option>750+</option>
@@ -66,7 +66,7 @@
               <option>2000+</option>
               <option>2500+</option>
             </select>
-      <select name="Bathrooms" class="custom-select" data-ng-model="c" data-ng-change="change('Bathrooms', c);apply(searchedCity.val)">
+      <select name="Bathrooms" class="custom-select" data-ng-model="c" data-ng-change="change('Bathrooms', c);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Bathrooms</option>
               <option>0+</option>
               <option>1+</option>
@@ -74,7 +74,7 @@
               <option>2+</option>
               <option>3+</option>
             </select>
-      <select name="Bedrooms" class="custom-select" data-ng-model="d" data-ng-change="change('Bedrooms', d);apply(searchedCity.val)">
+      <select name="Bedrooms" class="custom-select" data-ng-model="d" data-ng-change="change('Bedrooms', d);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Bedrooms</option>
               <option>0+</option>
               <option>1+</option>
@@ -82,7 +82,7 @@
               <option>3+</option>
               <option>4+</option>
             </select>
-      <select name="Square feet" class="custom-select" data-ng-model="e" data-ng-change="change('Square feet', e);apply(searchedCity.val)">
+      <select name="Square feet" class="custom-select" data-ng-model="e" data-ng-change="change('Square feet', e);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Square feet</option>
               <option>2000+ sqft</option>
               <option>3000+ sqft</option>
@@ -90,7 +90,7 @@
               <option>5000+ sqft</option>
               <option>7500+ sqft</option>
             </select>
-      <select name="Home type" class="custom-select" data-ng-model="f" data-ng-change="change('Home type', f);apply(searchedCity.val)">
+      <select name="Home type" class="custom-select" data-ng-model="f" data-ng-change="change('Home type', f);apply(results.searchedCity.val)">
              <option data-ng-selected="1 === 1">Home type</option>
               <option>House</option>
               <option>Apartment</option>
@@ -109,7 +109,7 @@
         <div class="modal-body">
           <form class="modal-form">
 
-            <select name="Min Price" class="custom-select" data-ng-model="a" data-ng-change="change('Min Price', a);apply(searchedCity.val)">
+            <select name="Min Price" class="custom-select" data-ng-model="a" data-ng-change="change('Min Price', a);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Min Price</option>
               <option>500+</option>
               <option>750+</option>
@@ -122,7 +122,7 @@
             </select>
 
 
-            <select name="Max Price" class="custom-select" data-ng-model="b" data-ng-change="change('Max Price', b);apply(searchedCity.val)">
+            <select name="Max Price" class="custom-select" data-ng-model="b" data-ng-change="change('Max Price', b);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Max Price</option>
               <option>500+</option>
               <option>750+</option>
@@ -135,7 +135,7 @@
             </select>
 
 
-            <select name="Bathrooms" class="custom-select" data-ng-model="c" data-ng-change="change('Bathrooms', c);apply(searchedCity.val)">
+            <select name="Bathrooms" class="custom-select" data-ng-model="c" data-ng-change="change('Bathrooms', c);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Bathrooms</option>
               <option>0+</option>
               <option>1+</option>
@@ -145,7 +145,7 @@
             </select>
 
 
-            <select name="Bedrooms" class="custom-select" data-ng-model="d" data-ng-change="change('Bedrooms', d);apply(searchedCity.val)">
+            <select name="Bedrooms" class="custom-select" data-ng-model="d" data-ng-change="change('Bedrooms', d);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Bedrooms</option>
               <option>0+</option>
               <option>1+</option>
@@ -155,7 +155,7 @@
             </select>
 
 
-            <select name="Square feet" class="custom-select" data-ng-model="e" data-ng-change="change('Square feet', e);apply(searchedCity.val)">
+            <select name="Square feet" class="custom-select" data-ng-model="e" data-ng-change="change('Square feet', e);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Square feet</option>
               <option>2000+ sqft</option>
               <option>3000+ sqft</option>
@@ -165,7 +165,7 @@
             </select>
 
 
-            <select name="Home type" class="custom-select" data-ng-model="f" data-ng-change="change('Home type', f);apply(searchedCity.val)">
+            <select name="Home type" class="custom-select" data-ng-model="f" data-ng-change="change('Home type', f);apply(results.searchedCity.val)">
              <option data-ng-selected="1 === 1">Home type</option>
               <option>House</option>
               <option>Apartment</option>
@@ -187,7 +187,7 @@
   </div>
   <div class="results">
     <div class="results-header text-center">
-      <h2 class="h1">{{searchedCity.key}}</h2>
+      <h2 class="h1">{{results.searchedCity.key}}</h2>
       <p class="h3">{{results.homes.length}} for sale </p>
     </div>
     <div>
@@ -250,33 +250,28 @@
                 </ul>
               </div>
               <div class="col-xs-12">
-                <p>Can the forbidden intellect decide behind the alcohol? A controller applies a reflecting firework. A humble graduate refrains. Your booked insult pains his library above the provocative change. A transient dot storms outside the midnight. Can the forbidden intellect decide behind the alcohol? A controller applies a reflecting firework. A humble graduate refrains. Your booked insult pains his library above the provocative change. A transient dot storms outside the midnight.
+                <p>
+                  Great location! Newly refinished hardwood floors throughout as well as crown molding. Living Room has a wood burning fireplace. First floor den and second floor office are surrounded by windows for lots of natural light. Additionally there is a newly finished basement which includes a large living space, closet, and laundry room. This home has been lovely cared for by the current owner and is in a great Location with easy access to major highways, public transport and schools.
                 </p>
               </div>
               <div class="col-xs-12">
                 <h2 class="text-center">Facts</h2>
                 <div class="modal-lists">
                   <ul>
-                    <li>Type of heating: yes</li>
-                    <li>Air conditioning: yes</li>
-                    <li>Windows: yes</li>
-                    <li>Last sold: yes</li>
-                    <li>Type of heating: yes</li>
-                    <li>Air conditioning: yes</li>
-                    <li>Windows: yes</li>
-                    <li>Last sold: yes</li>
+                    <li>Single Family</li>
+                    <li>Price/sqft:${{results.currentHome.currentHome.price/ results.currentHome.currentHome.sqft}}</li>
+                    <li>Flooring: Hardwood</li>
+                    <li>Cooling: Baseboard</li>
+                    <li>Heating: Forced air</li>
                   </ul>
                 </div>
                 <div class="modal-lists">
                   <ul>
-                    <li>Type of heating: yes</li>
-                    <li>Air conditioning: yes</li>
-                    <li>Windows: yes</li>
-                    <li>Last sold: yes</li>
-                    <li>Type of heating: yes</li>
-                    <li>Air conditioning: yes</li>
-                    <li>Windows: yes</li>
-                    <li>Last sold: yes</li>
+                    <li>Built in 1924</li>
+                    <li>Security System</li>
+                    <li>Master Bedroom </li>
+                    <li>Pond</li>
+                    <li>View: Park</li>
                   </ul>
                 </div>
               </div>
@@ -284,26 +279,20 @@
                 <h2 class="text-center">Features</h2>
                 <div class="modal-lists">
                   <ul>
-                    <li>Type of heating: yes</li>
-                    <li>Air conditioning: yes</li>
-                    <li>Windows: yes</li>
-                    <li>Last sold: yes</li>
-                    <li>Type of heating: yes</li>
-                    <li>Air conditioning: yes</li>
-                    <li>Windows: yes</li>
-                    <li>Last sold: yes</li>
+                    <li>Porch</li>
+                    <li>Basement</li>
+                    <li>Garden</li>
+                    <li>Storm Windows</li>
+                    <li>Fenced Yard</li>
                   </ul>
                 </div>
                 <div class="modal-lists">
                   <ul>
-                    <li>Type of heating: yes</li>
-                    <li>Air conditioning: yes</li>
-                    <li>Windows: yes</li>
-                    <li>Last sold: yes</li>
-                    <li>Type of heating: yes</li>
-                    <li>Air conditioning: yes</li>
-                    <li>Windows: yes</li>
-                    <li>Last sold: yes</li>
+                    <li>Fireplace</li>
+                    <li>Garage</li>
+                    <li>Vaulted Ceiling</li>
+                    <li>Patio</li>
+                    <li>Hot Tub</li>
                   </ul>
                 </div>
               </div>

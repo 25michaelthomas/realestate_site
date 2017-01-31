@@ -30,7 +30,7 @@
       <div id="search-container" data-ng-show="focus">
         <div class="row">
           <div data-ng-repeat="x in city.city">
-            <a href="#hotels" target="_self" data-ng-click="pickCity(x); searchBarClick(); apply(searchedCity.val)">
+            <a data-ng-click="pickCity(x); searchBarClick(); apply(x.val)">
               <div class="col-xs-12 well text-center">
                 <p>{{x.key}}</p>
               </div>
@@ -44,7 +44,7 @@
     </div>
     <form id="other-filters">
 
-      <select name="Min Price" class="custom-select" data-ng-model="a" data-ng-change="change('Min Price', a);apply(searchedCity.val)">
+      <select name="Min Price" class="custom-select" data-ng-model="a" data-ng-change="change('Min Price', a);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Min Price</option>
               <option>500+</option>
               <option>750+</option>
@@ -55,7 +55,7 @@
               <option>2000+</option>
               <option>2500+</option>
             </select>
-      <select name="Max Price" class="custom-select" data-ng-model="b" data-ng-change="change('Max Price', b);apply(searchedCity.val)">
+      <select name="Max Price" class="custom-select" data-ng-model="b" data-ng-change="change('Max Price', b);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Max Price</option>
               <option>500+</option>
               <option>750+</option>
@@ -66,7 +66,7 @@
               <option>2000+</option>
               <option>2500+</option>
             </select>
-      <select name="Star rating" class="custom-select" data-ng-model="i" data-ng-change="change('Star rating', i);apply(searchedCity.val)">
+      <select name="Star rating" class="custom-select" data-ng-model="i" data-ng-change="change('Star rating', i);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Star rating</option>
               <option>1+</option>
               <option>2+</option>
@@ -74,7 +74,7 @@
               <option>4+</option>
               <option>5</option>
             </select>
-      <select name="Bedrooms" class="custom-select" data-ng-model="d" data-ng-change="change('Bedrooms', d);apply(searchedCity.val)">
+      <select name="Bedrooms" class="custom-select" data-ng-model="d" data-ng-change="change('Bedrooms', d);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Beds</option>
               <option>0+</option>
               <option>1+</option>
@@ -82,7 +82,7 @@
               <option>3+</option>
               <option>4+</option>
             </select>
-      <select name="Square feet" class="custom-select" data-ng-model="e" data-ng-change="change('Square feet', e);apply(searchedCity.val)">
+      <select name="Square feet" class="custom-select" data-ng-model="e" data-ng-change="change('Square feet', e);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Square feet</option>
               <option>2000+ sqft</option>
               <option>3000+ sqft</option>
@@ -90,7 +90,7 @@
               <option>5000+ sqft</option>
               <option>7500+ sqft</option>
             </select>
-      <select name="Room type" class="custom-select" data-ng-model="g" data-ng-change="change('Room type', g);apply(searchedCity.val)">
+      <select name="Room type" class="custom-select" data-ng-model="g" data-ng-change="change('Room type', g);apply(results.searchedCity.val)">
              <option data-ng-selected="1 === 1">Room type</option>
               <option>Single</option>
               <option>Double</option>
@@ -112,7 +112,7 @@
         <div class="modal-body">
           <form class="modal-form">
 
-            <select name="Min Price" class="custom-select" data-ng-model="a" data-ng-change="change('Min Price', a);apply(searchedCity.val)">
+            <select name="Min Price" class="custom-select" data-ng-model="a" data-ng-change="change('Min Price', a);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Min Price</option>
               <option>500+</option>
               <option>750+</option>
@@ -125,7 +125,7 @@
             </select>
 
 
-            <select name="Max Price" class="custom-select" data-ng-model="b" data-ng-change="change('Max Price', b);apply(searchedCity.val)">
+            <select name="Max Price" class="custom-select" data-ng-model="b" data-ng-change="change('Max Price', b);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Max Price</option>
               <option>500+</option>
               <option>750+</option>
@@ -138,7 +138,7 @@
             </select>
 
 
-            <select name="Star rating" class="custom-select" data-ng-model="i" data-ng-change="change('Star rating', i);apply(searchedCity.val)">
+            <select name="Star rating" class="custom-select" data-ng-model="i" data-ng-change="change('Star rating', i);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Star rating</option>
               <option>1+</option>
               <option>2+</option>
@@ -148,7 +148,7 @@
             </select>
 
 
-            <select name="Bedrooms" class="custom-select" data-ng-model="d" data-ng-change="change('Bedrooms', d);apply(searchedCity.val)">
+            <select name="Bedrooms" class="custom-select" data-ng-model="d" data-ng-change="change('Bedrooms', d);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Beds</option>
               <option>0+</option>
               <option>1+</option>
@@ -158,7 +158,7 @@
             </select>
 
 
-            <select name="Square feet" class="custom-select" data-ng-model="e" data-ng-change="change('Square feet', e);apply(searchedCity.val)">
+            <select name="Square feet" class="custom-select" data-ng-model="e" data-ng-change="change('Square feet', e);apply(results.searchedCity.val)">
               <option data-ng-selected="1 === 1">Square feet</option>
               <option>2000+ sqft</option>
               <option>3000+ sqft</option>
@@ -168,7 +168,7 @@
             </select>
 
 
-            <select name="Room type" class="custom-select" data-ng-model="g" data-ng-change="change('Room type', g);apply(searchedCity.val)">
+            <select name="Room type" class="custom-select" data-ng-model="g" data-ng-change="change('Room type', g);apply(results.searchedCity.val)">
              <option data-ng-selected="1 === 1">Room type</option>
               <option>Single</option>
               <option>Double</option>
@@ -193,7 +193,7 @@
   </div>
   <div class="results">
     <div class="results-header text-center">
-      <h2 class="h1">{{searchedCity.key}}</h2>
+      <h2 class="h1">{{results.searchedCity.key}}</h2>
       <p class="h3">{{results.homes.length}} rooms </p>
     </div>
     <div>
@@ -263,33 +263,27 @@
                 </ul>
               </div>
               <div class="col-xs-12">
-                <p>Can the forbidden intellect decide behind the alcohol? A controller applies a reflecting firework. A humble graduate refrains. Your booked insult pains his library above the provocative change. A transient dot storms outside the midnight. Can the forbidden intellect decide behind the alcohol? A controller applies a reflecting firework. A humble graduate refrains. Your booked insult pains his library above the provocative change. A transient dot storms outside the midnight.
+                <p>This is a {{results.currentHome.currentHome.roomType}} with {{results.currentHome.currentHome.beds}} queen-size beds and a comfortable seating area. It is located downstairs with an outside entrance and is wheelchair accessible. It has a 39-inch flat screen TV and electric fireplace. Refrigerator, microwave, and Keurig coffee brewer are provided. Coffee, tea and amenities are supplied. The large bathroom has a 60-inch shower (no tub). The suites are not self-catering (daily maid service) with enough linens for two days. Assorted Coffee / tea and amenities are provided. Indulge in luxury with 100% ring spun cotton towels. ${{results.currentHome.currentHome.price}} Per night.
                 </p>
               </div>
               <div class="col-xs-12">
                 <h2 class="text-center">Facts</h2>
                 <div class="modal-lists">
                   <ul>
-                    <li>Type of heating: yes</li>
+                    <li>Spacious room</li>
+                    <li>Heating: yes</li>
                     <li>Air conditioning: yes</li>
                     <li>Windows: yes</li>
-                    <li>Last sold: yes</li>
-                    <li>Type of heating: yes</li>
-                    <li>Air conditioning: yes</li>
-                    <li>Windows: yes</li>
-                    <li>Last sold: yes</li>
+                    <li>Finely decored</li>
                   </ul>
                 </div>
                 <div class="modal-lists">
                   <ul>
-                    <li>Type of heating: yes</li>
-                    <li>Air conditioning: yes</li>
-                    <li>Windows: yes</li>
-                    <li>Last sold: yes</li>
-                    <li>Type of heating: yes</li>
-                    <li>Air conditioning: yes</li>
-                    <li>Windows: yes</li>
-                    <li>Last sold: yes</li>
+                    <li>Bed size: Queen</li>
+                    <li>Cable TV: yes</li>
+                    <li>WiFi: yes</li>
+                    <li>House keeping: daily</li>
+                    <li>Mini Safe: yes</li>
                   </ul>
                 </div>
               </div>
@@ -297,26 +291,20 @@
                 <h2 class="text-center">Features</h2>
                 <div class="modal-lists">
                   <ul>
-                    <li>Type of heating: yes</li>
-                    <li>Air conditioning: yes</li>
-                    <li>Windows: yes</li>
-                    <li>Last sold: yes</li>
-                    <li>Type of heating: yes</li>
-                    <li>Air conditioning: yes</li>
-                    <li>Windows: yes</li>
-                    <li>Last sold: yes</li>
+                    <li>Free Breakfast</li>
+                    <li>Soft drinks</li>
+                    <li>Television</li>
+                    <li>Late check-out</li>
+                    <li>Mini bar</li>
                   </ul>
                 </div>
                 <div class="modal-lists">
                   <ul>
-                    <li>Type of heating: yes</li>
-                    <li>Air conditioning: yes</li>
-                    <li>Windows: yes</li>
-                    <li>Last sold: yes</li>
-                    <li>Type of heating: yes</li>
-                    <li>Air conditioning: yes</li>
-                    <li>Windows: yes</li>
-                    <li>Last sold: yes</li>
+                    <li>Luxury sheets</li>
+                    <li>Cot on request</li>
+                    <li>Room service</li>
+                    <li>Coffee/Tea</li>
+                    <li>Kitchen</li>
                   </ul>
                 </div>
               </div>

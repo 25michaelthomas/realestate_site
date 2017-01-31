@@ -28,11 +28,11 @@ app.controller('MainController', ['$scope', "applyFilters", "getResults", "$root
     var number = parseFloat(num);
     return new Array(number);
   }
+  $scope.resetFilters = applyFilters.resetFilters;
+
   $scope.$on('$routeChangeSuccess', function (event) {
-
-
+    $scope.resetFilters();
     $scope.apply($scope.searchedCity.val);
-
   });
 }]);
 

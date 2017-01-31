@@ -206,6 +206,16 @@ app.factory('applyFilters', ['getResults', function (getResults) {
     },
     searchedCity: function (x) {
       results.searchedCity = x;
+    },
+    resetFilters: function () {
+      results.minPrice = 0;
+      results.maxPrice = 10000000000;
+      results.bathrooms = 0;
+      results.bedrooms = 0;
+      results.squareFeet = 0;
+      results.type = 0;
+      results.rating = 0;
+      results.roomType = 0;
     }
   }
 }]);

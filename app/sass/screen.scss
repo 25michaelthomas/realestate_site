@@ -31,6 +31,10 @@ input:focus {
   background-color: $secondary-color;
 }
 
+.well:hover {
+  cursor: pointer;
+}
+
 #rent-page {
   //SAFE STUFF END//
   //PROBLEM CHILD//PROBLEM CHILD
